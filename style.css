@@ -1,0 +1,31 @@
+body{
+    max-width:35rem;
+    margin: auto;
+    height: 100vh;
+}
+.navegationBar{
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    justify-content: space-around;
+}
+.navegationBar a{
+    margin: 0 3rem;
+    color: white;
+    font-size:large;
+    text-decoration:none;
+}
+.container{
+    border: 3px solid rgb(92, 92, 92);
+    border-radius: 2%;
+    margin: 0.5rem 0;
+    background-color: rgb(141, 140, 140);
+}
+.container h2{
+    text-align: center;
+}
+.container form{
+    width: 100%;
+    /* display: inline-block; */
+    text-align: center;
+}

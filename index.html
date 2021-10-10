@@ -4,24 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>To Do List</title>
 </head>
 <body>
-    <header class="title"></header>
-    <nav>
+    <header class="title">
+        <img src="" alt="">
+        <h2>Make here your ToDo List</h2>
+    </header>
+    <nav class="navegationBar">
         <li>
-            <a href=""></a>
-            <a href=""></a>
-            <a href=""></a>
+            <a href="">My ToDo</a>
+            <a href="">About</a>
+            <a href="">Contact Me</a>
         </li>
     </nav>
     <section>
         <div class="container">
-            <h2>my to do</h2>
+            <h2>My ToDo</h2>
             <form action="">
-
+                <p>Adding a new Task:</p>
+                <input type="text"placeholder="my new task">
+                <button>add task</button>
+                <p>My Tasks:</p>
+                <input type="checkbox" id="task1"value="myTask1"name="todo">
+                <label for="task1">Task name</label>
             </form>
         </div>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
