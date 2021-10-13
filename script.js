@@ -1,5 +1,7 @@
-const addTaskBtn= document.getElementById("addBtn");
-function addTask(addTaskBtn){
-    const newTask=document.createElement("input")
-    addTaskBtn.appereChild(newTask);
-}
+const addTaskBtn= document.getElementsByClassName("addBtn");
+const taskContainer=document.getElementsByClassName("taskList");
+addTaskBtn.onClick= function addTask(taskContainer){
+    const newTask=document.createElement("p");
+    taskContainer.apperchild(newTask);
+    newTask.textContent="new task"
+};
