@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <div id="results">
+        <a href="/">back to index page</a><br>
+    </div>
+    <script>
+        const resultList=document.getElementById("results")
+        new URLSearchParams(window.location.search).forEach((value,name)=>{
+            resultList.append(`${name}:${value}`)
+            resultList.append(document.createElement('br'))
+        });
+        const paragrafo=document.createElement('p')
+        paragrafo.textContent="paragrrafo aqui";
+        resultList.appendChild(paragrafo)
+    </script>
+</body>
+</html>

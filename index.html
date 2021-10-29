@@ -22,16 +22,14 @@
     <section>
         <div class="container">
             <h2>My ToDo</h2>
-            <form action="">
-                <p>Adding a new Task:</p>
-                <input type="text"placeholder="my new task">
-                <button class="addBtn" onclick="addTask()">add task</button>
-                <div class="taskList">
-                    <p>My Tasks:</p>
-                    <input type="checkbox" id="task1"value="myTask1"name="todo">
-                    <label for="task1">Task name</label>
-                </div>
+            <form name="ToDo" action="" method="GET">
+                <label for="newTask">Adding a new Task:</label><br>
+                <input type="text" name="newTask" id="newTask" placeholder="my new task">
+                <button type="submit" class="addBtn" onclick="addTask()">add task</button>
             </form>
+                <div class="taskList">
+                    <h3 id="taskTitle"></h3>
+                </div>
         </div>
     </section>
     <script type="text/javascript" src="script.js"></script>
