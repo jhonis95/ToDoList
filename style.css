@@ -29,3 +29,12 @@ body{
     /* display: inline-block; */
     text-align: center;
 }
+/*  contact paage  */
+.contactContainer{
+    text-align: center;
+}
+.contactList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
