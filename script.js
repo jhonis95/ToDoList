@@ -7,14 +7,7 @@ addBtn.addEventListener('click',addTask)
 let myToDo= [];//array that have all the task
 
 function addTask(){
-    //make item apere in the DOM
-    let li=document.createElement("li");
-    let ul=document.getElementById("list");
     let inputValue=document.getElementById("newTask").value;//variable that have the value of the input
-    let text=document.createTextNode(inputValue);//trasform the variable that have the value of the input in a usable string 
-
-    ul.appendChild(li);
-    li.appendChild(text);
 
     //creacting the task object
     let task= {
@@ -25,9 +18,17 @@ function addTask(){
 
     // console.log(myToDo);//cheking the object
 
-    document.getElementById("newTask").value = "";//to clean the label after submit
+    renderTask(inputValue);
 };
+function renderTask(input){
+    //make item show in the DOM
+    let li=document.createElement("li");
+    let ul=document.getElementById("list");
+    let text=document.createTextNode(input);//trasform the variable that have the value of the input in a usable string
 
-//XMLRequest AJAX
-const xmlContactPage=new XMLHttpRequest();
-xmlContactPage.open('GET','/contact.html',);
+    ul.appendChild(li);
+    li.appendChild(text);
+    
+    document.getElementById("newTask").value = "";//to clean the label after submit
+}
+// Router /////////////////
