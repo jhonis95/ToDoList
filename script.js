@@ -14,25 +14,22 @@ function addTask(){
     };
     myToDo.push(task)//pushing the task to array myToDo[]
     
-    // console.log(myToDo);//cheking the object
-    
     renderTask();
 };
 function renderTask(){
-    //Delite the previus list
-    
     //make item show in the DOM
     let taskListContainer=document.getElementById("taskList")//div with the todo list
-    let ul=document.createElement("ul")
-
-    taskListContainer.appendChild(ul)
+    
+    let oldUl=document.getElementById("list")//getting the old ul id 
+    let ul=document.createElement("ul")//creating new ul
+    taskListContainer.replaceChild(ul,oldUl)//replacing the old ul for a new one
+    ul.id="list"//setting new ul to oldUl id to list in that way we dont have problem to reuse the render function
 
     for(let i=0;i<myToDo.length;i++){
         let text=document.createTextNode(myToDo[i].value)
-        let li=document.createElement("li");
-
-        ul.appendChild(li);
-        li.appendChild(text);
+        let li=document.createElement("li")
+        ul.appendChild(li)
+        li.appendChild(text)
     }
     
     document.getElementById("newTask").value = "";//to clean the label after submit
