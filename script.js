@@ -29,12 +29,36 @@ function renderTask(){
         let text=document.createTextNode(myToDo[i].value)
         let li=document.createElement("li")
         let input=document.createElement("input")
+
         input.type="checkbox"
+        input.id=`${i}`
+        input.className="taskCheckBox"
+
+        if(myToDo[i].check===true){
+            input.checked
+        }
+
         ul.appendChild(li)
         li.appendChild(input)
         li.appendChild(text)
     }
     
     document.getElementById("newTask").value = "";//to clean the label after submit
+}
+function inputCheck(id, condition){
+    let task =document.getElementById(id)
+    console.log(task)
+    if(condition===true){
+        task.checked=condition
+    
+        console.dir(task)
+    }
+    if(task.checkValidity()==true){
+        myToDo[task.id].check=true;
+        console.log("foi checkecado")
+    }
+    else{
+        myToDo[task.id].check=false;
+    }
 }
 // Router /////////////////
