@@ -4,9 +4,14 @@ body{
     height: 100vh;
 }
 .navegationBar{
+    background-color: black;
+}
+.navegationBar ul{
+    list-style-type: none;
     display: flex;
     flex-direction: row;
-    background-color: black;
+    width: 100%;
+    padding: 0;
     justify-content: space-around;
 }
 .navegationBar a{

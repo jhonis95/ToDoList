@@ -39,6 +39,7 @@ function renderTask(){
         input.className="taskCheckBox"
 
         deleteBtn.className="deleteBtn"
+        deleteBtn.id=`btn${i}`
         deleteBtn.innerText="delete"
         
         if(myToDo[i].check===true){//render the input following the object value
@@ -53,11 +54,11 @@ function renderTask(){
         li.appendChild(deleteBtn)
     }
     addingEventToTask()//funtion to track the input 
+    addingEventToButton()
     document.getElementById("newTask").value = "";//to clean the label after submit
 }
 function addingEventToTask(){
     let checkBox = document.getElementsByClassName("taskCheckBox");
-
     for(let i=0;i<checkBox.length;i++){
         let taskId=checkBox[i].id//getting the id of the each task in the list
         let taskItem=document.getElementById(taskId)//getting the element that owns the id within the document 
@@ -69,11 +70,27 @@ function addingEventToTask(){
                 myToDo[task.target.id].check=false
             }
         })
-        //adding the event to the delete button
-        
     }
+
+}
+function addingEventToButton(){
+    //adding the event to the delete button
+    let deleteBtn=document.getElementsByClassName("deleteBtn");
+    for(let i=0;i<deleteBtn.length;i++){
+        
+        let btnId=`${deleteBtn[i].id}`
+       
+        let btnItem=document.getElementById(btnId)
+        
+        btnItem.addEventListener('click',()=>{
+            if(myToDo[i].delete===false){
+                myToDo[i].delete=true
+            }
+        })
+    }
+    deleteTask()
 }
 function deleteTask(){
-    console.log("deleting the task")
+    
 }
 //Router 
