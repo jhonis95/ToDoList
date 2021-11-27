@@ -39,7 +39,7 @@ function renderTask(){
         input.className="taskCheckBox"
 
         deleteBtn.className="deleteBtn"
-        deleteBtn.id=`btn${i}`
+        deleteBtn.id=`${i}`
         deleteBtn.innerText="delete"
         
         if(myToDo[i].check===true){//render the input following the object value
@@ -53,17 +53,14 @@ function renderTask(){
         li.appendChild(text)
         li.appendChild(deleteBtn)
     }
-    addingEventToTask()//funtion to track the input 
-    addingEventToButton()
+    checkHander()//funtion to track the input 
+    deleteHander()//funtion to delete task on click button delete
     document.getElementById("newTask").value = "";//to clean the label after submit
 }
-function addingEventToTask(){
+function checkHander(){
     let checkBox = document.getElementsByClassName("taskCheckBox");
     for(let i=0;i<checkBox.length;i++){
-        let taskId=checkBox[i].id//getting the id of the each task in the list
-        let taskItem=document.getElementById(taskId)//getting the element that owns the id within the document 
-        //adding the event to track the check box state
-        taskItem.addEventListener('change',(task)=>{//for each element in the list putting a event listener that do a function on change the checkbox
+        checkBox[i].addEventListener('change',(task)=>{//for each element in the list putting a event listener that do a function on change the checkbox
             if(task.target.checked===true){ //task is the current element, .target is a reference to the object onto which the event was dispatched
                 myToDo[task.target.id].check=true//saving the tracked checkbox input to the current object
             }else{
@@ -73,24 +70,17 @@ function addingEventToTask(){
     }
 
 }
-function addingEventToButton(){
+function deleteHander(){
     //adding the event to the delete button
-    let deleteBtn=document.getElementsByClassName("deleteBtn");
-    for(let i=0;i<deleteBtn.length;i++){
-        
-        let btnId=`${deleteBtn[i].id}`
-       
-        let btnItem=document.getElementById(btnId)
-        
-        btnItem.addEventListener('click',()=>{
-            if(myToDo[i].delete===false){
-                myToDo[i].delete=true
+    let deleteBtn=document.getElementsByClassName("deleteBtn");//getting the HTML collection that have deleteBtn as class
+    for(let i=0;i<deleteBtn.length;i++){        
+        deleteBtn[i].addEventListener('click',(task)=>{//for each element of that collection add a event listener
+            myToDo[task.target.id].delete=true
+            if(myToDo[task.target.id].delete===true){
+                myToDo.splice(task.target.id,1)
+                renderTask()
             }
         })
     }
-    deleteTask()
-}
-function deleteTask(){
-    
 }
 //Router 
