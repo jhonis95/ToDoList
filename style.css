@@ -19,6 +19,7 @@ body{
     color: white;
     font-size:large;
     text-decoration:none;
+    font-size:x-large;
 }
 .container{
     border: 3px solid rgb(92, 92, 92);
@@ -34,8 +35,38 @@ body{
     /* display: inline-block; */
     text-align: center;
 }
+
+#taskList ul{
+    padding: 0;
+    list-style-type: none;
+}
+#taskList li{
+    width: 90%;
+    text-align: center;
+    font-size:x-large;
+    border: black solid 2px;
+    border-radius: 5px;
+    margin: 0.5rem auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.taskCheckBox{
+    font: inherit; 
+    width: 1.15em;
+    height: 1.15em;
+}
+.deleteBtn{
+    background: url(https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png) no-repeat;
+    background-position: center; 
+    background-color: rgb(219, 218, 215);
+    width: 2.25em;
+    height: 2.25em;
+}
 /*  contact paage  */
-.contactContainer{
+.contactContainer{ 
     text-align: center;
 }
 .contactList{
@@ -45,4 +76,20 @@ body{
 }
 .hide{
     display: none;
+}
+
+
+/* responsivite media querys */
+@media(max-width:560px){
+    .navegationBar a{
+        margin: 0;
+    }
+}
+@media(max-width:370px){
+    .title h1{
+        font-size: x-large;
+    }
+    .navegationBar a{
+        font-size: large;
+    }
 }

@@ -40,7 +40,7 @@ function renderTask(){
 
         deleteBtn.className="deleteBtn"
         deleteBtn.id=`${i}`
-        deleteBtn.innerText="delete"
+        // deleteBtn.innerText="delete"
         
         if(myToDo[i].check===true){//render the input following the object value
             input.checked=true 
@@ -75,8 +75,8 @@ function deleteHander(){
     let deleteBtn=document.getElementsByClassName("deleteBtn");//getting the HTML collection that have deleteBtn as class
     for(let i=0;i<deleteBtn.length;i++){        
         deleteBtn[i].addEventListener('click',(task)=>{//for each element of that collection add a event listener
-            myToDo[task.target.id].delete=true
-            if(myToDo[task.target.id].delete===true){
+            myToDo[task.target.id].delete=true //setting the value of delete element to true in the array object
+            if(myToDo[task.target.id].delete===true){  // if that object have the elemente delete iquals true delete the object in the array
                 myToDo.splice(task.target.id,1)
                 renderTask()
             }
