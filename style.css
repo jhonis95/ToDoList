@@ -3,6 +3,7 @@ body{
     margin: auto;
     height: 100vh;
 }
+/* ####################################### */
 /* header */
 .header{
     display: grid;
@@ -62,22 +63,15 @@ body{
     font-size:1.125rem;
     text-decoration:none;
 }
-/* section container */
-.container{
-    border: 3px solid rgb(92, 92, 92);
-    border-radius: 2%;
-    margin: 0.5rem 0;
-    background-color: rgb(141, 140, 140);
-}
-.container h2{
-    text-align: center;
-}
-.container form{
+/* ####################################### */
+/* section addTask */
+.addTaskContainer form{
     width: 100%;
     /* display: inline-block; */
     text-align: center;
 }
-
+/* ####################################### */
+/* selection taskList */
 #taskList ul{
     padding: 0;
     list-style-type: none;

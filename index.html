@@ -18,32 +18,41 @@
         <nav class="navegationBar">
             <ul>
                 <li>
-                    <a href="/">My ToDo</a>
+                    <a href="#home">My ToDo</a>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a href="#about">About</a>
                 </li>
                 <li>
-                    <a href="contact.html">Contact Me</a>
+                    <a href="#contact">Contact Me</a>
                 </li>
             </ul>
         </nav>
     </header>
-    <section>
-        <div class="container">
-            <h2>My To Do</h2>
+
+    <section id="home">
+        <div class="addTaskContainer">
             <form name="ToDo" action="" method="GET">
                 <label for="newTask">Adding a new Task:</label><br>
                 <input type="text" name="newTask" id="newTask" placeholder="my new task">
+                <input type="color">
+                <input type="date">
                 <button type="button" class="addBtn" id="addBtn">add task</button>
             </form>
-                <div id="taskList" class="taskListContainer">
-                    <ul id="list">
-                    </ul>
-                </div>
+        </div>
+        <div id="taskList" class="taskListContainer">
+            <h2 id="labelTitle"></h2> <!--here wilreceve the name of the array obj -->
+            <ul id="list">
+            </ul>
+        </div>
+        <div class="addLabelContainer">
+            <h2>My To Do</h2>
+            <ul id="labelList">
+            </ul>
         </div>
     </section>
-    <section class="content hide">
+
+    <section id="about" class="content hide">
         <div class="container">
             <h2>
                 hi my name is jonatan
@@ -54,7 +63,8 @@
             </p>
         </div>
     </section>
-    <section class="content hide">
+
+    <section id="contact" class="content hide">
         <div class="container">
             <div class="contactContainer">
                 <h2>Hi you can fint me in</h2>
