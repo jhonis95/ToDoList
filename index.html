@@ -30,18 +30,19 @@
         </nav>
     </header>
 
-    <section id="home">
+    <section id="home" class="homePage">
         <div class="addTaskContainer">
+            <h2>New Task:</h2>
             <form name="ToDo" action="" method="GET">
-                <label for="newTask">Adding a new Task:</label><br>
                 <input type="text" name="newTask" id="newTask" placeholder="my new task">
-                <input type="color">
-                <input type="date">
-                <button type="button" class="addBtn" id="addBtn">add task</button>
+                <input type="color" id="pickColor">
+                <input type="date" id="date">
+                <input type="text" id="description">
             </form>
+            <button type="button" class="addBtn" id="addBtn">add task</button>
         </div>
         <div id="taskList" class="taskListContainer">
-            <h2 id="labelTitle"></h2> <!--here wilreceve the name of the array obj -->
+            <h2 id="labelTitle"></h2> <!--here will receve the name of the array obj -->
             <ul id="list">
             </ul>
         </div>
@@ -52,7 +53,7 @@
         </div>
     </section>
 
-    <section id="about" class="content hide">
+    <section id="about" class="content">
         <div class="container">
             <h2>
                 hi my name is jonatan
@@ -64,7 +65,7 @@
         </div>
     </section>
 
-    <section id="contact" class="content hide">
+    <section id="contact" class="content">
         <div class="container">
             <div class="contactContainer">
                 <h2>Hi you can fint me in</h2>
