@@ -7,7 +7,7 @@ body{
 /* header */
 .header{
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.25fr;
     grid-template-areas: "devinfo titleH1""navBar navBar";
 
 }
@@ -23,14 +23,14 @@ body{
 }
 #developerName{
     grid-area: name;
-    font-size: 0.75rem;
+    font-size: 0.625rem;
 }
 #developerPosition{
     grid-area: dev;
-    font-size: 0.625rem;
+    font-size: 0.5rem;
 }
 .devInfoContainer p{
-    margin: 0 0 0 2px;
+    margin: 0 0 0 5px;
 }
 #developerName{
     align-self: center;
@@ -43,7 +43,7 @@ body{
     grid-area: titleH1;
     align-self: center;
     margin: 0;
-    font-size: 1.375rem;
+    font-size: 1.125em;
 }
 .navegationBar{
     background-color: black;
@@ -74,26 +74,32 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     background-color: gray;
     width: 70%;
+    height: 91vh;
 }
 .addTaskContainer form{
-    width: 100%;
-    height: 83vh;
-    /* display: inline-block; */
+    width: 80%;
     display: grid;
+    height: 75vh;
+    justify-content: space-around;
+    row-gap: 5px;
+    column-gap: 5px;
     grid-template-columns: 2fr 0fr;
     grid-template-rows: 0fr 0.05fr 0.5fr;
     grid-template-areas: "newTask pickColor""date date""description description";
 }
 .addTaskContainer h2{
     margin: 0;
+
 }
 #newTask{
     grid-area: newTask;
 }
 #pickColor{
     grid-area: pickColor;
+    width: 1.5rem;
 }
 #date{
     grid-area: date;
@@ -105,11 +111,17 @@ body{
     width: 60%;
     border: 1px solid black;
     border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 1rem;
 }
 /* ####################################### */
 /* selection taskList */
+.taskListContainer{
+    height: 91vh;
+}
 #taskList ul{
     padding: 0;
+    margin: 0;
     list-style-type: none;
 }
 #taskList li{
@@ -137,7 +149,13 @@ body{
     width: 2.25em;
     height: 2.25em;
 }
-/*  contact paage  */
+/* ####################################### */
+/* section addLabelContainer */
+.addLabelContainer{
+    height: 91vh;
+}
+/* ####################################### */
+/*  contact page  */
 .contactContainer{ 
     text-align: center;
 }
@@ -149,8 +167,7 @@ body{
 .hide{
     display: none;
 }
-
-
+/* ####################################### */
 /* responsivite media querys */
 @media(max-width:560px){
     .navegationBar a{
