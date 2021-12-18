@@ -31,15 +31,12 @@
     </header>
 
     <section id="home" class="homePage">
-        <div class="addTaskContainer">
-            <h2>New Task:</h2>
-            <form name="ToDo" action="" method="GET">
-                <input type="text" name="newTask" id="newTask" placeholder="my new task">
-                <input type="color" id="pickColor">
-                <input type="date" id="date">
-                <input type="text" id="description">
-            </form>
-            <button type="button" class="addBtn" id="addBtn">add task</button>
+        <div class="addLabelContainer">
+            <button class="showNewLabel"></button>
+            <h2>My To Do</h2>
+            <ul id="labelList">
+            </ul>
+            <button class="addLabelBtn">Add a Label</button>
         </div>
         <div class="taskContainer">
             <div id="taskList" class="taskListContainer">
@@ -48,10 +45,16 @@
                 </ul>
             </div>
         </div>
-        <div class="addLabelContainer">
-            <h2>My To Do</h2>
-            <ul id="labelList">
-            </ul>
+        <div class="addTaskContainer">
+            <button class="showNewTask"></button>
+            <h2>New Task:</h2>
+            <form name="ToDo" action="" method="GET">
+                <input type="text" name="newTask" id="newTask" placeholder="my new task">
+                <input type="color" id="pickColor">
+                <input type="date" id="date">
+                <input type="text" id="description">
+            </form>
+            <button type="button" class="addBtn" id="addBtn">add task</button>
         </div>
     </section>
 

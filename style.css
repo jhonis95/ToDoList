@@ -1,7 +1,8 @@
 body{
-    max-width:35rem;
+    max-width: 80%;
     margin: auto;
     height: 100vh;
+    /* overflow-x: hidden; */
 }
 /* ####################################### */
 /* header */
@@ -67,22 +68,25 @@ body{
 /* home page */
 .homePage{
     height: 90vh;
+    display: flex;
+
 }
 /* ####################################### */
 /* section addTask */
 .addTaskContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    background-color: gray;
-    width: 70%;
-    height: 91vh;
+    width: 30%;
+    height: 92vh;
+    transform: translateX(90%);
+    background-image: url(images/label_menu_right.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
 }
 .addTaskContainer form{
-    width: 80%;
-    display: grid;
+    float: right;
+    margin-right: 5%;
     height: 75vh;
+    display: grid;
     justify-content: space-around;
     row-gap: 5px;
     column-gap: 5px;
@@ -113,11 +117,14 @@ body{
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 1rem;
+    margin-left: 25%;
 }
 /* ####################################### */
 /* selection taskList */
 .taskListContainer{
+    margin-top: 1rem;
     height: 91vh;
+    z-index: 0;
 }
 #taskList ul{
     padding: 0;
@@ -150,9 +157,22 @@ body{
     height: 2.25em;
 }
 /* ####################################### */
-/* section addLabelContainer */
+/* section addLabelContaine* background-size: contain; */
 .addLabelContainer{
-    height: 91vh;
+    width: 30%;
+    transform: translateX(0%);
+    background-image: url(images/label_menu_left.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+.addLabelBtn{
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 1rem;
+    margin-left: 25%;
 }
 /* ####################################### */
 /*  contact page  */
