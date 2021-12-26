@@ -1,8 +1,12 @@
 const addBtn=document.getElementById('addBtn');
 addBtn.addEventListener('click',addTask)
-
-let myToDo= [];//array that have all the task
-
+let ex={
+    check: false,
+        value: "exemplo",
+        delete: false
+}
+let myToDo= [ex];//array that have all the task
+renderTask()
 function addTask(){
     let inputValue=document.getElementById("newTask").value;//variable that have the value of the input
     if(inputValue===""){//don't let the user put a empty input
