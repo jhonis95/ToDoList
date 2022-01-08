@@ -32,8 +32,9 @@
 
     <section id="home" class="homePage">
         <div class="addLabelContainer">
-            <button class="showNewLabel"></button>
-            <h2>My To Do</h2>
+            <div class="addLabelHeader">
+                <h2 class="menuTitle">My To Do</h2>
+                <button id="leftSideMenuBtn"></button>            </div>
             <ul id="labelList">
             </ul>
             <button class="addLabelBtn">Add a Label</button>
@@ -49,8 +50,8 @@
 
         <div class="addTaskContainer">
             <div class="addTaskHead">
-                <button class="showNewTaskBtn"></button>
-                <h2>New Task:</h2>
+                <button id="rightSideMenuBtn"></button>
+                <h2 class="menuTitle">New Task:</h2>
             </div>
             <form name="ToDo" action="" method="GET">
                 <input type="text" name="newTask" id="newTask" placeholder="my new task">
