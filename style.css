@@ -90,6 +90,7 @@ body{
 }
 .addTaskContainer form{
     margin-top: 10%;
+    /* the height set the distance of the add task btn */
     height: 80%;
     width: 100%;
     margin-left: 15%;
@@ -251,9 +252,3 @@ body{
         font-size: large;
     }
 }
-/* @media(min-width:335px){
-    #newTask #description #date{
-        background-color: turquoise;
-    }
-
-} */
