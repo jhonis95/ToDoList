@@ -1,12 +1,21 @@
 const addBtn=document.getElementById('addBtn');
 addBtn.addEventListener('click',addTask)
-let ex={
-    check: false,
-        value: "exemplo",
-        delete: false
+
+function label(task,labelTitle){//constructor
+    this.task=task;
+    this.labelTitle=labelTitle;
 }
+function task(title,color,date,check,description){// constructor
+    this.title=title;
+    this.color= color;
+    this.date= date;
+    this.check= check;
+    this.description=description;   
+}
+
 //add task menu
-let myToDo= [ex];//array that have all the task
+let myToDo= {};//object that have all the labels
+myToDo.label1=new label(new task('testTask'),'label1');
 renderTask()
 function addTask(){
     let inputValue=document.getElementById("newTask").value;//variable that have the value of the input
@@ -15,12 +24,7 @@ function addTask(){
         return
     }
     //creacting the task object
-    let task= {
-        check: false,
-        value: inputValue,
-        delete: false
-    };
-    myToDo.push(task)//pushing the task to array myToDo[]
+    myToDo.label1[inputValue]=new task(inputValue)
     
     renderTask();
     rightShowSideMenu()
@@ -61,31 +65,34 @@ function renderTask(){
     taskListContainer.replaceChild(ul,oldUl)//replacing the old ul for a new one
     ul.id="list"//setting new ul to oldUl id to list in that way we dont have problem to reuse the render function
     //make list show in the DOM
-    for(let i=0;i<myToDo.length;i++){
-        let text=document.createTextNode(myToDo[i].value)
-        let li=document.createElement("li")
-        let input=document.createElement("input")
-        let deleteBtn=document.createElement("button")
-        //setting the input type,id adn class
-        input.type="checkbox"
-        input.id=`${i}`
-        input.className="taskCheckBox"
+    
+    //************* */
+    // for(let i=0;i<myToDo.length;i++){
+    //     let text=document.createTextNode(myToDo[i].value)
+    //     let li=document.createElement("li")
+    //     let input=document.createElement("input")
+    //     let deleteBtn=document.createElement("button")
+    //     //setting the input type,id adn class
+    //     input.type="checkbox"
+    //     input.id=`${i}`
+    //     input.className="taskCheckBox"
 
-        deleteBtn.className="deleteBtn"
-        deleteBtn.id=`${i}`
-        // deleteBtn.innerText="delete"
+    //     deleteBtn.className="deleteBtn"
+    //     deleteBtn.id=`${i}`
+    //     // deleteBtn.innerText="delete"
         
-        if(myToDo[i].check===true){//render the input following the object value
-            input.checked=true 
-        }else{
-            input.checked=false
-        }
+    //     if(myToDo[i].check===true){//render the input following the object value
+    //         input.checked=true 
+    //     }else{
+    //         input.checked=false
+    //     }
         
-        ul.appendChild(li)
-        li.appendChild(input)
-        li.appendChild(text)
-        li.appendChild(deleteBtn)
-    }
+    //     ul.appendChild(li)
+    //     li.appendChild(input)
+    //     li.appendChild(text)
+    //     li.appendChild(deleteBtn)
+    // }
+    // *************************************************8
     checkHander()//funtion to track the input 
     deleteHander()//funtion to delete task on click button delete
     document.getElementById("newTask").value = "";//to clean the label after submit
