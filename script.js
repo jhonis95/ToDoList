@@ -24,7 +24,7 @@ function addTask(){
         return
     }
     //creacting the task object
-    myToDo.label1[inputValue]=new task(inputValue)
+    myToDo.label1[inputValue]=new task(inputValue)//How to Set Dynamic Property Keys with ES6
     
     renderTask();
     rightShowSideMenu()
@@ -64,8 +64,26 @@ function renderTask(){
     
     taskListContainer.replaceChild(ul,oldUl)//replacing the old ul for a new one
     ul.id="list"//setting new ul to oldUl id to list in that way we dont have problem to reuse the render function
-    //make list show in the DOM
     
+    //make list show in the DOM
+
+    Object.keys(myToDo.label1).forEach((task)=>{//obj.key is a function that returns a array and forEach
+        if(myToDo.label1.labelTitle===myToDo.label1[task]){//dont print the name of the label
+            document.getElementById('labelName').innerText=myToDo.label1[task]
+            // console.log(myToDo.label1[task])
+        }
+        console.log(task)
+        let text=document.createTextNode(task)
+        console.log(`${text}`)//this lyteral just getting the object no the value
+        ul.innerHTML=`
+        <li>
+            <input type="checkbox" name="" id="${text}" class="taskCheckBox">
+            ${text}
+            <input type="button" value="" class="deleteBtn">
+        </li>
+        `
+
+    })
     //************* */
     // for(let i=0;i<myToDo.length;i++){
     //     let text=document.createTextNode(myToDo[i].value)
