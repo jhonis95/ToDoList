@@ -31,15 +31,15 @@ function addTask(){
 };
 function checkHander(){
     let checkBox = document.getElementsByClassName("taskCheckBox");
-    for(let i=0;i<checkBox.length;i++){
-        checkBox[i].addEventListener('change',(task)=>{//for each element in the list putting a event listener that do a function on change the checkbox
-            if(task.target.checked===true){ //task is the current element, .target is a reference to the object onto which the event was dispatched
-                myToDo[task.target.id].check=true//saving the tracked checkbox input to the current object
-            }else{
-                myToDo[task.target.id].check=false
-            }
-        })
-    }
+    // for(let i=0;i<checkBox.length;i++){
+    //     checkBox[i].addEventListener('change',(task)=>{//for each element in the list putting a event listener that do a function on change the checkbox
+    //         if(task.target.checked===true){ //task is the current element, .target is a reference to the object onto which the event was dispatched
+    //             myToDo[task.target.id].check=true//saving the tracked checkbox input to the current object
+    //         }else{
+    //             myToDo[task.target.id].check=false
+    //         }
+    //     })
+    // }
 
 }
 function deleteHander(){
@@ -70,47 +70,32 @@ function renderTask(){
     Object.keys(myToDo.label1).forEach((task)=>{//obj.key is a function that returns a array and forEach
         if(myToDo.label1.labelTitle===myToDo.label1[task]){//dont print the name of the label
             document.getElementById('labelName').innerText=myToDo.label1[task]
-            // console.log(myToDo.label1[task])
+            return
         }
-        console.log(task)
         let text=document.createTextNode(task)
-        console.log(`${text}`)//this lyteral just getting the object no the value
-        ul.innerHTML=`
-        <li>
-            <input type="checkbox" name="" id="${text}" class="taskCheckBox">
-            ${text}
-            <input type="button" value="" class="deleteBtn">
-        </li>
-        `
+        let li=document.createElement("li")
+        let input=document.createElement("input")
+        let deleteBtn=document.createElement("button")
+
+        //setting the input type,id adn class
+        input.type="checkbox"
+        input.id=`idTask${task}`
+        input.className="taskCheckBox"
+        deleteBtn.className="deleteBtn"
+        deleteBtn.id=`deleteBtn${task}`
+
+        if(myToDo.label1[`${task}`].check===true){//render the input following the object value
+            input.checked=true 
+        }else{
+            input.checked=false
+        }
+        ul.appendChild(li)
+        li.appendChild(input)
+        li.appendChild(text)
+        li.appendChild(deleteBtn)
 
     })
-    //************* */
-    // for(let i=0;i<myToDo.length;i++){
-    //     let text=document.createTextNode(myToDo[i].value)
-    //     let li=document.createElement("li")
-    //     let input=document.createElement("input")
-    //     let deleteBtn=document.createElement("button")
-    //     //setting the input type,id adn class
-    //     input.type="checkbox"
-    //     input.id=`${i}`
-    //     input.className="taskCheckBox"
-
-    //     deleteBtn.className="deleteBtn"
-    //     deleteBtn.id=`${i}`
-    //     // deleteBtn.innerText="delete"
-        
-    //     if(myToDo[i].check===true){//render the input following the object value
-    //         input.checked=true 
-    //     }else{
-    //         input.checked=false
-    //     }
-        
-    //     ul.appendChild(li)
-    //     li.appendChild(input)
-    //     li.appendChild(text)
-    //     li.appendChild(deleteBtn)
-    // }
-    // *************************************************8
+    // *************************************************
     checkHander()//funtion to track the input 
     deleteHander()//funtion to delete task on click button delete
     document.getElementById("newTask").value = "";//to clean the label after submit
