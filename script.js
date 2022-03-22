@@ -1,21 +1,38 @@
 const addBtn=document.getElementById('addBtn');
-addBtn.addEventListener('click',addTask)
+const addLabel=document.getElementById('addLabel');
 
-function label(task,labelTitle){//constructor
-    this.task=task;
-    this.labelTitle=labelTitle;
+addBtn.addEventListener('click',addTask)
+addLabel.addEventListener('click',addLabelFun)
+
+function label(task,labelName){//constructor
+  {
+    this.task=[task];
+    this.labelName=labelName
+  }
 }
-function task(title,color,date,check,description){// constructor
-    this.title=title;
-    this.color= color;
-    this.date= date;
-    this.check= check;
-    this.description=description;   
+function task(title,description,check,color,date){// constructor
+  this.title=title;
+  this.description=description;   
+  this.check= check; 
+  this.color= color;
+  this.date= date;
 }
 
 //add task menu
-let myToDo= {};//object that have all the labels
-myToDo.label1=new label(new task('testTask'),'label1');
+let myToDo={
+  label:{
+    labelName:'label',
+    task:[
+      {
+        title:'first task',
+        description:'for do today',
+        check:false,
+        color:'blue',
+        date:'22/03/2022'
+      }
+    ]
+  }
+}//object that have all the labels
 renderTask()
 function addTask(){
     let inputValue=document.getElementById("newTask").value;//variable that have the value of the input
@@ -24,7 +41,7 @@ function addTask(){
         return
     }
     //creacting the task object
-    myToDo.label1[inputValue]=new task(inputValue)//How to Set Dynamic Property Keys with ES6
+    myToDo.label[inputValue]=new task(inputValue)//How to Set Dynamic Property Keys with ES6
     
     renderTask();
     rightShowSideMenu()
@@ -67,9 +84,9 @@ function renderTask(){
     
     //make list show in the DOM
 
-    Object.keys(myToDo.label1).forEach((task)=>{//obj.key is a function that returns a array and forEach
-        if(myToDo.label1.labelTitle===myToDo.label1[task]){//dont print the name of the label
-            document.getElementById('labelName').innerText=myToDo.label1[task]
+    Object.keys(myToDo.label).forEach((task)=>{//obj.key is a function that returns a array and forEach
+        if(myToDo.label.labelName===myToDo.label[task]){//dont print the name of the label
+            document.getElementById('labelName').innerText=myToDo.label[task]
             return
         }
         let text=document.createTextNode(task)
@@ -84,7 +101,7 @@ function renderTask(){
         deleteBtn.className="deleteBtn"
         deleteBtn.id=`deleteBtn${task}`
 
-        if(myToDo.label1[`${task}`].check===true){//render the input following the object value
+        if(myToDo.label[`${task}`].check===true){//render the input following the object value
             input.checked=true 
         }else{
             input.checked=false
@@ -120,4 +137,8 @@ function leftShowSideMenu(){
     }else{
         addMenu[0].style.transform=`translateX(${-90}%)`
     }
+}
+//********************************************* */
+function addLabelFun(){
+    
 }
