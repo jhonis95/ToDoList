@@ -33,7 +33,11 @@ let myToDo={
     ]
   }
 }//object that have all the labels
+
+//start render the list of task and labels
 renderTask()
+
+
 function addTask(){
     let inputValue=document.getElementById("newTask").value;//variable that have the value of the input
     if(inputValue===""){//don't let the user put a empty input
@@ -138,7 +142,12 @@ function leftShowSideMenu(){
         addMenu[0].style.transform=`translateX(${-90}%)`
     }
 }
-//********************************************* */
+//**********************************************/
+
 function addLabelFun(){
-    
+    let newLabel=document.getElementById('newLabel').value
+    myToDo[`${newLabel}`]=new label
+}
+function renderLabel(){
+
 }

@@ -9,14 +9,14 @@ body{
 .header{
     display: grid;
     grid-template-columns: 1fr 1.25fr;
-    grid-template-areas: "devinfo titleH1""navBar navBar";
+    grid-template-areas: "devinfo titleH1"-"navBar navBar";
 
 }
 .devInfoContainer{
     display: grid;
     grid-template-columns: 0fr 2fr;
     row-gap: 0;
-    grid-template-areas: "icon name""icon dev";
+    grid-template-areas: "icon name"-"icon dev";
     grid-area: devinfo;
 }
 #icon{
@@ -99,7 +99,7 @@ body{
     column-gap: 1px;
     grid-template-columns: 0fr 0fr;
     grid-template-rows: 0fr 0.05fr 0.5fr;
-    grid-template-areas: "newTask pickColor""date date""description description";
+    grid-template-areas: "newTask pickColor"-"date date"-"description description";
 }
 .menuTitle{
     margin: 0;
@@ -203,15 +203,18 @@ body{
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 2%;
+    margin-top: 2%; 
 }
 .addLabelBtn{
-    width: 60%;
+    width: 80%;
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 1rem;
-    margin-left: 25%;
+    margin-left: 5px;
+}
+.addLabelBtn img{
+    width: 1rem;
 }
 #leftSideMenuBtn{
     width: 1.2rem;
