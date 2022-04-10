@@ -4,7 +4,7 @@ const addLabel=document.getElementById('addLabel');
 addBtn.addEventListener('click',addTask)
 addLabel.addEventListener('click',addLabelFun)
 
-function label(task,labelName){//constructor
+function label(labelName,task){//constructor
   {
     this.task=[task];
     this.labelName=labelName
@@ -20,8 +20,8 @@ function task(title,description,check,color,date){// constructor
 
 //add task menu
 let myToDo={
-  label:{
-    labelName:'label',
+  label: {
+    labelName:'For Today',
     task:[
       {
         title:'first task',
@@ -36,7 +36,7 @@ let myToDo={
 
 //start render the list of task and labels
 renderTask()
-
+renderLabel()
 
 function addTask(){
     let inputValue=document.getElementById("newTask").value;//variable that have the value of the input
@@ -146,8 +146,14 @@ function leftShowSideMenu(){
 
 function addLabelFun(){
     let newLabel=document.getElementById('newLabel').value
-    myToDo[`${newLabel}`]=new label
+    myToDo[`${newLabel}`]=new label(newLabel)
 }
 function renderLabel(){
-
+    const labelList= document.getElementById("labelList")
+    let li=document.createElement("li")
+    Object.keys(myToDo).forEach((label)=>{
+        li.innerText=myToDo[label].labelName
+        labelList.appendChild(li)
+    })
+    
 }
