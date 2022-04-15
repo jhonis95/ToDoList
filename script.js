@@ -155,5 +155,4 @@ function renderLabel(){
         li.innerText=myToDo[label].labelName
         labelList.appendChild(li)
     })
-    
 }

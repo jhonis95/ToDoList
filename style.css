@@ -4,6 +4,23 @@ body{
     height: 100vh;
     overflow-x: hidden;
 }
+/* universal classes */
+.addBtn{
+    width: 60%; 
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+.sidesMenuBottomContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: aqua;
+    bottom: 1%;
+    width: 90%;
+    height: 15%;
+}
 /* ####################################### */
 /* header */
 .header{
@@ -128,14 +145,6 @@ body{
     background-repeat: no-repeat;
     border: none;
 }
-.addBtn{
-    width: 60%; 
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    margin-bottom: 1rem;
-    margin-left: 25%;
-}
 /* ####################################### */
 /* selection taskList */
 .taskContainer{
@@ -204,17 +213,6 @@ body{
     align-items: center;
     width: 100%;
     margin-top: 2%; 
-}
-.addLabelBtn{
-    width: 80%;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    margin-bottom: 1rem;
-    margin-left: 5px;
-}
-.addLabelBtn img{
-    width: 1rem;
 }
 #leftSideMenuBtn{
     width: 1.2rem;
