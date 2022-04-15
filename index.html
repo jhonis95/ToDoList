@@ -32,11 +32,12 @@
 
     <section id="home" class="homePage">
         <div class="addLabelContainer">
-            <div class="addLabelHeader">
+            <div class="sideMenuHeadContainer">
                 <h2 class="menuTitle">My To Do</h2>
                 <button id="leftSideMenuBtn"></button>            
             </div>
-            <div class="addLabelList">
+            <div class="headerSideMenuLine"></div>
+            <div class="sidesMenuMiddleContainer">
                 <ul id="labelList">
                 </ul>
             </div>
@@ -54,16 +55,19 @@
         </div>
 
         <div class="addTaskContainer">
-            <div class="addTaskHead">
+            <div class="sideMenuHeadContainer">
                 <button id="rightSideMenuBtn"></button>
                 <h2 class="menuTitle">New Task:</h2>
             </div>
-            <form name="ToDo" action="" method="GET">
-                <input type="text" name="newTask" id="newTask" placeholder="my new task">
-                <input type="color" id="pickColor">
-                <input type="date" id="date">
-                <input type="text" id="description">
-            </form>
+            <div class="headerSideMenuLine"></div>
+            <div class="sidesMenuMiddleContainer">
+                <form name="ToDo" action="" method="GET">
+                    <input type="text" name="newTask" id="newTask" placeholder="my new task">
+                    <input type="color" id="pickColor">
+                    <input type="date" id="date">
+                    <input type="text" id="description">
+                </form>
+            </div>
             <div class="sidesMenuBottomContainer">
                 <button type="button" class="addBtn" id="addBtn">add task</button>
             </div>

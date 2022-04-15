@@ -6,20 +6,53 @@ body{
 }
 /* universal classes */
 .addBtn{
-    width: 60%; 
+    width: 70%; 
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
+    background-color: #2B27F0;
+    color: white;
+    font-size:large;
+    font-weight:bold;
+}
+.headerSideMenuLine{
+    height: 3px;
+    margin-left: 10%;
+    margin-right: 20%;
+    border-radius: 10%;
+    background-color: rgba(128, 128, 128,50%);
+}
+.sideMenuHeadContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 2%; 
+}
+.addTaskContainer .headerSideMenuLine{
+    margin-left: 20%;
+    margin-right: 10%;
+} 
+.sidesMenuMiddleContainer{
+    height: 80%;
+    width: 90%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+}
+.addTaskContainer .sidesMenuMiddleContainer{
+    width: 100%;
 }
 .sidesMenuBottomContainer{
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
-    background-color: aqua;
     bottom: 1%;
     width: 90%;
     height: 15%;
+}
+.addTaskContainer .sidesMenuBottomContainer{
+    margin-left: 10%;
 }
 /* ####################################### */
 /* header */
@@ -99,11 +132,6 @@ body{
     background-repeat: no-repeat;
     z-index: 1;
     position: absolute;
-}
-.addTaskHead{
-    display: flex;
-    align-items: center;
-    margin-top: 2%;
 }
 .addTaskContainer form{
     margin-top: 10%;
@@ -208,12 +236,6 @@ body{
     z-index: 3;
     position: absolute;
 }
-.addLabelHeader{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-top: 2%; 
-}
 #leftSideMenuBtn{
     width: 1.2rem;
     height: 1.2rem;
@@ -222,6 +244,20 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     border: none;
+}
+#labelList{
+    padding: 0%;
+    list-style-type:none;
+    width: 60%;
+}
+#labelList li{
+    font-size: large;
+    font-weight:bold;
+    padding: 0.5rem;
+    border: black solid 1px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 5px;
 }
 /* ####################################### */
 /*  contact page  */
