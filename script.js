@@ -98,7 +98,7 @@ function renderTask(){
         let input=document.createElement("input")
         let deleteBtn=document.createElement("button")
 
-        //setting the input type,id adn class
+        //setting the input type,id and class
         input.type="checkbox"
         input.id=`idTask${task}`
         input.className="taskCheckBox"
@@ -149,10 +149,24 @@ function addLabelFun(){
     myToDo[`${newLabel}`]=new label(newLabel)
 }
 function renderLabel(){
-    const labelList= document.getElementById("labelList")
-    let li=document.createElement("li")
+    let labelListContainer= document.getElementById("labelListContainer")//Div container that have the label list
+    let oldUl=document.getElementById("labelList")//getting the old ul id 
+    let ul=document.createElement("ul")//creating new ul
+
+    labelListContainer.replaceChild(ul,oldUl) //update the label list replacing for a new ul 
+    ul.id="labelList"
+    
     Object.keys(myToDo).forEach((label)=>{
-        li.innerText=myToDo[label].labelName
+        let labelList=document.getElementById("labelList")
+        let li=document.createElement("li")
+        let editBtn=document.createElement("button")
+        let labelName=document.createElement("h3")
+
+        labelName.innerText=myToDo[label].labelName
         labelList.appendChild(li)
+        li.appendChild(labelName)
+        li.appendChild(editBtn)
+        editBtn.className="editLabelBtn"
+        labelName.className="labelName"
     })
 }
