@@ -278,6 +278,56 @@ body{
     background-color: rgb(219, 218, 215);
 }
 /* ####################################### */
+/* modals */
+.addLabelModal {
+    text-align: center;
+    border: black solid 2px;
+    border-radius: 10px;
+    background-color: white;
+    width: 45%;
+    height: 20%;
+    z-index: 4;
+    margin: 20% 8%;
+    overflow: auto;
+    position: fixed;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr) 1.2fr;
+}
+.addLabelModal h4{
+    grid-area: 1/1/2/3;
+    margin: 0%;
+    align-self: center;
+    font-size:larger;
+}
+#newLabel{
+    grid-area: 2 / 1 / 3 / 3;
+    border-radius: 10px;
+    height: 50%;
+    width: 80%;
+    justify-self: center;
+}
+.actionBtn{
+    border-radius: 50%;
+    width: 50%;
+    height: 90%;
+    justify-self: center;
+}
+#comfirmBtn{
+    background: url(images/check.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#cancelBtn{
+    background: url(images/multiply.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ####################################### */
 /*  contact page  */
 .contactContainer{ 
     text-align: center;
