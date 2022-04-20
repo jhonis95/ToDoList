@@ -1,8 +1,13 @@
 const addBtn=document.getElementById('addBtn');
-const addLabel=document.getElementById('addLabel');
+const addLabel=document.getElementById('addLabelBtn');
+const cancelAddLabelBtn=document.getElementById("cancelBtn")
+const confirmAddLabelBtn=document.getElementById("confirmBtn")
 
 addBtn.addEventListener('click',addTask)
-addLabel.addEventListener('click',addLabelFun)
+addLabel.addEventListener('click',openAddLabelModal)
+cancelAddLabelBtn.addEventListener('click',cancelAddNewLabel)
+confirmAddLabelBtn.addEventListener('click',confirmAddNewLabel)
+
 
 function label(labelName,task){//constructor
   {
@@ -143,10 +148,20 @@ function leftShowSideMenu(){
     }
 }
 //**********************************************/
-
-function addLabelFun(){
-    let newLabel=document.getElementById('newLabel').value
-    myToDo[`${newLabel}`]=new label(newLabel)
+function openAddLabelModal(){
+    document.getElementById('newLabel').value=""
+    let modal = document.getElementById("addLabelModal");
+    modal.className="addLabelModal";
+}
+function confirmAddNewLabel(){
+    let newLabel=document.getElementById('newLabel').value;
+    myToDo[`${newLabel}`]=new label(newLabel);
+    cancelAddNewLabel();
+    renderLabel();
+}
+function cancelAddNewLabel(){
+    let modal = document.getElementById("addLabelModal")
+    modal.className="addLabelModal hide"
 }
 function renderLabel(){
     let labelListContainer= document.getElementById("labelListContainer")//Div container that have the label list

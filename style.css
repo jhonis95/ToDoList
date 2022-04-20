@@ -314,7 +314,7 @@ body{
     height: 90%;
     justify-self: center;
 }
-#comfirmBtn{
+#confirmBtn{
     background: url(images/check.png);
     background-position: center;
     background-repeat: no-repeat;
