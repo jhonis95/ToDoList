@@ -41,7 +41,7 @@ let myToDo={
 
 //start render the list of task and labels
 renderTask()
-renderLabel()
+renderLabelList()
 
 function addTask(){
     let inputValue=document.getElementById("newTask").value;//variable that have the value of the input
@@ -157,13 +157,13 @@ function confirmAddNewLabel(){
     let newLabel=document.getElementById('newLabel').value;
     myToDo[`${newLabel}`]=new label(newLabel);
     cancelAddNewLabel();
-    renderLabel();
+    renderLabelList();
 }
 function cancelAddNewLabel(){
     let modal = document.getElementById("addLabelModal")
     modal.className="addLabelModal hide"
 }
-function renderLabel(){
+function renderLabelList(){
     let labelListContainer= document.getElementById("labelListContainer")//Div container that have the label list
     let oldUl=document.getElementById("labelList")//getting the old ul id 
     let ul=document.createElement("ul")//creating new ul
@@ -176,12 +176,15 @@ function renderLabel(){
         let li=document.createElement("li")
         let editBtn=document.createElement("button")
         let labelName=document.createElement("h3")
+        let deleteBtn=document.createElement("button")
 
         labelName.innerText=myToDo[label].labelName
         labelList.appendChild(li)
+        li.appendChild(deleteBtn)
         li.appendChild(labelName)
         li.appendChild(editBtn)
         editBtn.className="editLabelBtn"
         labelName.className="labelName"
+        deleteBtn.className="deleteLabel"
     })
 }

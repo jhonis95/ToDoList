@@ -254,9 +254,9 @@ body{
     font-size: large;
     font-weight:bold;
     text-align: center;
-    padding: 5px;
+    padding-bottom: 5px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 .editLabelBtn{
@@ -274,8 +274,17 @@ body{
     margin: 0%;
     border: black solid 1px;
     border-radius: 10px;
-    width: 80%;
+    width: 75%;
     background-color: rgb(219, 218, 215);
+}
+.deleteLabel{
+    background: url(images/delite_label.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 /* ####################################### */
 /* modals */
@@ -290,7 +299,6 @@ body{
     margin: 20% 8%;
     overflow: auto;
     position: fixed;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr) 1.2fr;
