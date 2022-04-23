@@ -248,11 +248,9 @@ body{
 #labelList{
     padding: 0%;
     list-style-type:none;
-    width: 90%;
+    width: 90%; 
 }
 #labelList li{
-    font-size: large;
-    font-weight:bold;
     text-align: center;
     padding-bottom: 5px;
     display: flex;
@@ -270,12 +268,17 @@ body{
     padding: 0%;
 }
 .labelName{
+    font-size: large;
+    text-align: center;
     padding: 0%;
     margin: 0%;
     border: black solid 1px;
     border-radius: 10px;
     width: 75%;
     background-color: rgb(219, 218, 215);
+}
+.inFocusToEdit{
+    box-shadow:orange 0px 0px 10px;
 }
 .deleteLabel{
     background: url(images/delite_label.svg);
