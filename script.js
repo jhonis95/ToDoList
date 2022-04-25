@@ -4,6 +4,7 @@ const cancelAddLabelBtn=document.getElementById("cancelBtn")
 const confirmAddLabelBtn=document.getElementById("confirmBtn")
 
 
+
 addBtn.addEventListener('click',addTask)
 addLabel.addEventListener('click',openAddLabelModal)
 cancelAddLabelBtn.addEventListener('click',cancelAddNewLabel)
@@ -24,8 +25,8 @@ function task(title,description,check,color,date){// constructor
 }
 //creacting the todo:
 let myToDo=[]//object that have all the labels
-myToDo["For Today"]=new label("For Today")
-myToDo["For Today"]["first task"]=new task("first task","for do today",false,"blue","22/03/2022")
+myToDo["Today"]=new label("Today")
+myToDo["Today"]["first task"]=new task("first task","for do today",false,"blue","22/03/2022")
 
 
 //start render the list of task and labels
@@ -76,6 +77,7 @@ function renderLabelList(){
         deleteBtn.className="deleteLabel"
 
         editBtn.addEventListener('click',editLabel)
+        deleteBtn.addEventListener('click',deleteLabel)
     })
 }
 function editLabel(){
@@ -83,7 +85,7 @@ function editLabel(){
     input.type="text"
     input.className=`${input.className} inFocusToEdit`
     let oldLabelName=input.value
-    console.log(Object.keys(myToDo))
+    
     input.addEventListener('keypress',(e)=>{
         if(e.key==='Enter'){
             Object.keys(myToDo).forEach((Label)=>{
@@ -92,13 +94,21 @@ function editLabel(){
                     delete Object.assign(myToDo, {[input.value]: myToDo[Label] })[Label];
                 }
             })
-            console.log(Object.keys(myToDo))
+    
             input.className=`labelName`
             input.type="button"
             renderLabelList()
         }
     })
 }
+function deleteLabel(){
+    let input=this.parentElement.children[1]
+    if(myToDo[`${input.value}`].labelName===`${input.value}`){
+        delete myToDo[`${input.value}`]
+        renderLabelList()
+    }
+}
+
 // **********************************
 // need a revision all the functions
 function addTask(){
@@ -150,7 +160,7 @@ function renderTask(){
     ul.id="list"//setting new ul to oldUl id to list in that way we dont have problem to reuse the render function
     
     //make list show in the DOM
-    let label=myToDo['For Today']
+    let label=myToDo['Today']
     Object.keys(label).forEach((task)=>{//obj.key is a function that returns a array and forEach
         if(label.labelName===label[task]){//dont print the name of the label
             document.getElementById('labelName').innerText=label[task]
