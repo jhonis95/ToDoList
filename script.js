@@ -15,7 +15,7 @@ function label(labelName){//constructor
     this.labelName=labelName
   }
 }
-function task(title,description,check,color,date){// constructor
+function task(title,description,color,date,check){// constructor
   this.title=title;
   this.description=description;   
   this.check= check; 
@@ -114,20 +114,23 @@ function setCurrentLabel(){
     currentLabel=this.value
     renderTask()
 }
-// **********************************
-// need a revision all the functions
+
 function addTask(){
-    let inputValue=document.getElementById("newTask").value;//variable that have the value of the input
-    if(inputValue===""){//don't let the user put a empty input
+    let taskTitle=document.getElementById("newTask").value;//variable that have the value of the input
+    let taskDescription=document.getElementById("description").value
+    let taskDate=document.getElementById("date").value
+    let taskColor=document.getElementById("pickColor").value
+    if(taskTitle===""){//don't let the user put a empty input
         alert("sorry you must put a task")
         return
     }
     //creacting the task object
-    myToDo.label[inputValue]=new task(inputValue)//How to Set Dynamic Property Keys with ES6
-    
-    renderTask();
-    rightShowSideMenu()
+    myToDo[currentLabel][taskTitle]=new task(taskTitle,taskDescription,taskColor,taskDate,false)//How to Set Dynamic Property Keys with ES6
+    renderTask()//show the task in the list
+    rightShowSideMenu()//closing the add task menu
 };
+// **********************************
+// need a revision all the functions
 function checkHander(){
     let checkBox = document.getElementsByClassName("taskCheckBox");
     // for(let i=0;i<checkBox.length;i++){
