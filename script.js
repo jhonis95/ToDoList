@@ -25,7 +25,7 @@ function task(title,description,color,date,check){// constructor
 //creacting the todo:
 let myToDo=[]//object that have all the labels
 myToDo["Today"]=new label("Today")
-myToDo["Today"]["first task"]=new task("first task","for do today",false,"blue","22/03/2022")
+myToDo["Today"]["first task"]=new task("first task","for do today","#00bfff","22/03/2022",false,)
 
 
 //start render the list of task and labels
@@ -115,6 +115,7 @@ function setCurrentLabel(){
     renderTask()
 }
 
+//adding task menu
 function addTask(){
     let taskTitle=document.getElementById("newTask").value;//variable that have the value of the input
     let taskDescription=document.getElementById("description").value
@@ -126,38 +127,18 @@ function addTask(){
     }
     //creacting the task object
     myToDo[currentLabel][taskTitle]=new task(taskTitle,taskDescription,taskColor,taskDate,false)//How to Set Dynamic Property Keys with ES6
+
+    //to clean input after submit
+    document.getElementById("newTask").value = null
+    document.getElementById("description").value = null
+    document.getElementById("date").value = null
+    document.getElementById("pickColor").value = "#000000"
+
     renderTask()//show the task in the list
     rightShowSideMenu()//closing the add task menu
 };
-// **********************************
-// need a revision all the functions
-function checkHander(){
-    let checkBox = document.getElementsByClassName("taskCheckBox");
-    // for(let i=0;i<checkBox.length;i++){
-    //     checkBox[i].addEventListener('change',(task)=>{//for each element in the list putting a event listener that do a function on change the checkbox
-    //         if(task.target.checked===true){ //task is the current element, .target is a reference to the object onto which the event was dispatched
-    //             myToDo[task.target.id].check=true//saving the tracked checkbox input to the current object
-    //         }else{
-    //             myToDo[task.target.id].check=false
-    //         }
-    //     })
-    // }
 
-}
-function deleteHander(){
-    //adding the event to the delete button
-    let deleteBtn=document.getElementsByClassName("deleteBtn");//getting the HTML collection that have deleteBtn as class
-    for(let i=0;i<deleteBtn.length;i++){        
-        deleteBtn[i].addEventListener('click',(task)=>{//for each element of that collection add a event listener
-            myToDo[task.target.id].delete=true //setting the value of delete element to true in the array object
-            if(myToDo[task.target.id].delete===true){  // if that object have the elemente delete iquals true delete the object in the array
-                myToDo.splice(task.target.id,1)
-                renderTask()
-            }
-        })
-    }
-}
-//List menu
+//task List menu
 function renderTask(){
     //make the container clean to render a new list
     let taskListContainer=document.getElementById("taskList")//div with the todo list
@@ -174,34 +155,60 @@ function renderTask(){
             document.getElementById('labelName').innerText=label[task]
             return
         }
-        let text=document.createTextNode(task)
+
         let li=document.createElement("li")
-        let input=document.createElement("input")
+        let text=document.createTextNode(task)
+        let checkBtn=document.createElement("input")
         let deleteBtn=document.createElement("button")
+        let taskDescription=document.createElement("output")
+        let taskDate=document.createElement("output")
+        let taskColor=document.createElement("button")
 
-        //setting the input type,id and class
-        input.type="checkbox"
-        input.id=`idTask${task}`
-        input.className="taskCheckBox"
+        //setting the inputs type and class
+        checkBtn.type="checkbox"
+        checkBtn.className="taskCheckBox"
         deleteBtn.className="deleteBtn"
-        deleteBtn.id=`deleteBtn${task}`
-
-        if(label[`${task}`].check===true){//render the input following the object value
-            input.checked=true 
-        }else{
-            input.checked=false
-        }
+        taskDescription.className="taskDescriptionOutput"
+        taskDate.className="taskDateOutput"
+        taskColor.className="taskColorOutput"
+        
         ul.appendChild(li)
-        li.appendChild(input)
+        li.appendChild(checkBtn)
         li.appendChild(text)
+        li.appendChild(taskDescription)
+        li.appendChild(taskDate)
+        li.appendChild(taskColor)
         li.appendChild(deleteBtn)
 
+        taskDescription.value=myToDo[currentLabel][task].description
+        taskDate.value=myToDo[currentLabel][task].date
+        taskColor.style.backgroundColor=myToDo[currentLabel][task].color
+
+        checkBtn.addEventListener("change",setValueCheckBox)//render the checkBtn following the object value
     })
     // *************************************************
-    checkHander()//funtion to track the input 
     deleteHander()//funtion to delete task on click button delete
-    document.getElementById("newTask").value = "";//to clean the label after submit
 }
+function setValueCheckBox(){
+    let taskName=this.parentElement.innerText;
+    this.checked===true?myToDo[currentLabel][taskName].check=true : myToDo[currentLabel][taskName].check=false
+}
+// **********************************
+//NEEED REVISION
+function deleteHander(){
+    //adding the event to the delete button
+    let deleteBtn=document.getElementsByClassName("deleteBtn");//getting the HTML collection that have deleteBtn as class
+    for(let i=0;i<deleteBtn.length;i++){        
+        deleteBtn[i].addEventListener('click',(task)=>{//for each element of that collection add a event listener
+            myToDo[task.target.id].delete=true //setting the value of delete element to true in the array object
+            if(myToDo[task.target.id].delete===true){  // if that object have the elemente delete iquals true delete the object in the array
+                myToDo.splice(task.target.id,1)
+                renderTask()
+            }
+        })
+    }
+}
+
 //Side menu Button
 const rightSideMenuBtn=document.getElementById('rightSideMenuBtn')
 rightSideMenuBtn.addEventListener('click',rightShowSideMenu)
