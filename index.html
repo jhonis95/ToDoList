@@ -63,7 +63,16 @@
             <div class="sidesMenuMiddleContainer">
                 <form name="ToDo" action="" method="GET">
                     <input type="text" name="newTask" id="newTask" placeholder="my new task">
-                    <input type="color" id="pickColor">
+                    <input type="color" list="colorOptions" id="pickColor">
+                    <datalist id="colorOptions">
+                        <option value="#000000">black</option>
+                        <option value="#808080">gray</option>
+                        <option value="#FFFFFF">white</option>
+                        <option value="#FF0000">red</option>
+                        <option value="#008000">green</option>
+                        <option value="#FFFF00">yellow</option>
+                        <option value="#00bfff">deepskyblue</option>
+                    </datalist>
                     <input type="date" id="date">
                     <input type="text" id="description">
                 </form>

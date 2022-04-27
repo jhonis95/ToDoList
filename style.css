@@ -134,17 +134,18 @@ body{
     position: absolute;
 }
 .addTaskContainer form{
-    margin-top: 10%;
     /* the height set the distance of the add task btn */
-    height: 80%;
+    height: 100%;
     width: 100%;
-    margin-left: 15%;
+    margin-top: 20px;
+    margin-right: 5px;
+    justify-content:end;
     display: grid;
     row-gap: 1px;
     column-gap: 1px;
     grid-template-columns: 0fr 0fr;
-    grid-template-rows: 0fr 0.05fr 0.5fr;
-    grid-template-areas: "newTask pickColor" "date date" "description description";
+    grid-template-rows: 0fr 0.3fr 0.05fr;
+    grid-template-areas: "newTask pickColor" "description description" "date date";
 }
 .menuTitle{
     margin: 0;
@@ -156,7 +157,7 @@ body{
 }
 #pickColor{
     grid-area: pickColor;
-    width: 1.5rem;
+    width: 3rem;
 }
 #date{
     grid-area: date;
