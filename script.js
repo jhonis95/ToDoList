@@ -25,7 +25,7 @@ function task(title,description,color,date,check){// constructor
 //creacting the todo:
 let myToDo=[]//object that have all the labels
 myToDo["Today"]=new label("Today")
-myToDo["Today"]["first task"]=new task("first task","for do today","#00bfff","22/03/2022",false,)
+myToDo["Today"]["first task"]=new task("first task","for do today","#00bfff","2022-03-22",false,)
 
 
 //start render the list of task and labels
