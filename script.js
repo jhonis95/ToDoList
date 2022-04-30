@@ -157,7 +157,7 @@ function renderTask(){
         }
 
         let li=document.createElement("li")
-        let text=document.createTextNode(task)
+        let taskName=document.createElement("h4")
         let checkBtn=document.createElement("input")
         let deleteBtn=document.createElement("button")
         let taskDescription=document.createElement("output")
@@ -165,6 +165,7 @@ function renderTask(){
         let taskColor=document.createElement("button")
 
         //setting the inputs type and class
+        taskName.className="taskNameOutput"
         checkBtn.type="checkbox"
         checkBtn.className="taskCheckBox"
         deleteBtn.className="deleteBtn"
@@ -173,17 +174,19 @@ function renderTask(){
         taskColor.className="taskColorOutput"
         
         ul.appendChild(li)
+        li.appendChild(taskColor)
         li.appendChild(checkBtn)
-        li.appendChild(text)
+        li.appendChild(taskName)
         li.appendChild(taskDescription)
         li.appendChild(taskDate)
-        li.appendChild(taskColor)
         li.appendChild(deleteBtn)
 
+        taskName.innerText=myToDo[currentLabel][task].title
         taskDescription.value=myToDo[currentLabel][task].description
         taskDate.value=myToDo[currentLabel][task].date
         taskColor.style.backgroundColor=myToDo[currentLabel][task].color
         checkBtn.checked=myToDo[currentLabel][task].check
+        
 
         checkBtn.addEventListener("change",setValueCheckBox)//render the checkBtn following the object value
     })
@@ -191,11 +194,7 @@ function renderTask(){
     deleteHander()//funtion to delete task on click button delete
 }
 function setValueCheckBox(){
-    let taskName=this.parentElement.text;
-    console.dir(this)
-    console.log(this)
-    console.log(taskName)
-    console.log(typeof(taskName))
+    let taskName=this.parentElement.children[2].innerText;//innerText is all the li not just the name of the label
     this.checked===true?myToDo[currentLabel][taskName].check=true : myToDo[currentLabel][taskName].check=false
 }
 // **********************************
