@@ -25,7 +25,7 @@ function task(title,description,color,date,check){// constructor
 //creacting the todo:
 let myToDo=[]//object that have all the labels
 myToDo["Today"]=new label("Today")
-myToDo["Today"]["first task"]=new task("first task","for do today","#00bfff","2022-03-22",false,)
+myToDo["Today"]["first task"]=new task("first task","for do today","#00bfff","2022-03-22",false)
 
 
 //start render the list of task and labels
@@ -183,6 +183,7 @@ function renderTask(){
         taskDescription.value=myToDo[currentLabel][task].description
         taskDate.value=myToDo[currentLabel][task].date
         taskColor.style.backgroundColor=myToDo[currentLabel][task].color
+        checkBtn.checked=myToDo[currentLabel][task].check
 
         checkBtn.addEventListener("change",setValueCheckBox)//render the checkBtn following the object value
     })
@@ -190,7 +191,11 @@ function renderTask(){
     deleteHander()//funtion to delete task on click button delete
 }
 function setValueCheckBox(){
-    let taskName=this.parentElement.innerText;
+    let taskName=this.parentElement.text;
+    console.dir(this)
+    console.log(this)
+    console.log(taskName)
+    console.log(typeof(taskName))
     this.checked===true?myToDo[currentLabel][taskName].check=true : myToDo[currentLabel][taskName].check=false
 }
 // **********************************

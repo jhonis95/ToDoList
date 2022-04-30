@@ -1,0 +1,67 @@
+body{
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+    overflow-x: hidden;
+}
+/* ####################################### */
+/* header */
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    grid-template-areas: "devinfo titleH1" "navBar navBar";
+
+}
+.devInfoContainer{
+    display: grid;
+    grid-template-columns: 0fr 2fr;
+    row-gap: 0;
+    grid-template-areas: "icon name" "icon dev";
+    grid-area: devinfo;
+}
+#icon{
+    grid-area: icon;
+    border-radius: 50%;
+}
+#developerName{
+    grid-area: name;
+    font-size: 0.75rem;
+}
+#developerPosition{
+    grid-area: dev;
+    font-size: 0.625rem;
+}
+.devInfoContainer p{
+    margin: 0 0 0 5px;
+}
+#developerName{
+    align-self: center;
+}
+.devInfoContainer img{
+    width: 2em;
+    margin: 2px;
+}
+#appTitle{
+    text-align: center;
+    grid-area: titleH1;
+    align-self: center;
+    margin: 0;
+    font-size: 1.125em;
+}
+.navegationBar{
+    background-color: black;
+    grid-area: navBar;
+}
+.navegationBar ul{
+    list-style-type: none;
+    display: flex;
+    width: 100%;
+    margin: 0.2em 0;
+    padding: 0;
+    justify-content: space-around;
+}
+.navegationBar a{
+    color: white;
+    font-size:1.125rem;
+    text-decoration:none;
+}
