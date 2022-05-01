@@ -189,30 +189,23 @@ function renderTask(){
         
 
         checkBtn.addEventListener("change",setValueCheckBox)//render the checkBtn following the object value
+        deleteBtn.addEventListener("click",deleteTaskListBtn)
     })
     // *************************************************
-    deleteHander()//funtion to delete task on click button delete
 }
 function setValueCheckBox(){
     let taskName=this.parentElement.children[2].innerText;//innerText is all the li not just the name of the label
     this.checked===true?myToDo[currentLabel][taskName].check=true : myToDo[currentLabel][taskName].check=false
 }
+
+function deleteTaskListBtn(){
+    //adding the event to the delete button
+    let taskName=this.parentElement.children[2].innerText;
+    delete myToDo[currentLabel][taskName]
+    renderTask()
+}
 // **********************************
 //NEEED REVISION
-function deleteHander(){
-    //adding the event to the delete button
-    let deleteBtn=document.getElementsByClassName("deleteBtn");//getting the HTML collection that have deleteBtn as class
-    for(let i=0;i<deleteBtn.length;i++){        
-        deleteBtn[i].addEventListener('click',(task)=>{//for each element of that collection add a event listener
-            myToDo[task.target.id].delete=true //setting the value of delete element to true in the array object
-            if(myToDo[task.target.id].delete===true){  // if that object have the elemente delete iquals true delete the object in the array
-                myToDo.splice(task.target.id,1)
-                renderTask()
-            }
-        })
-    }
-}
-
 //Side menu Button
 const rightSideMenuBtn=document.getElementById('rightSideMenuBtn')
 rightSideMenuBtn.addEventListener('click',rightShowSideMenu)
