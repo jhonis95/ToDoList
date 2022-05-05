@@ -64,8 +64,8 @@ body{
 /* ####################################### */
 /* section addTask */
 .addTaskContainer{
-    height: 88vh;
-    width: 73%;
+    height: 650px;
+    width: 300px;
     transform: translateX(126%);
     background-image: url(images/label_menu_right.svg);
     background-size: contain;
@@ -196,8 +196,8 @@ body{
 /* ####################################### */
 /* section addLabelContaine* background-size: contain; */
 .addLabelContainer{
-    height: 88vh;
-    width: 73%;
+    height: 650px;
+    width: 300px;
     transform: translateX(-90%);
     background-image: url(images/label_menu_left.svg);
     background-size:contain;
