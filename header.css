@@ -7,10 +7,14 @@ body{
 /* ####################################### */
 /* header */
 .header{
+    position:fixed;
+    width: 100%;
+    height: 10vh;
     display: grid;
-    grid-template-columns: 1fr 1.25fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "devinfo titleH1" "navBar navBar";
-
+    z-index: 5;
+    background-color: white;
 }
 .devInfoContainer{
     display: grid;
@@ -22,14 +26,15 @@ body{
 #icon{
     grid-area: icon;
     border-radius: 50%;
+    align-self: center;
 }
 #developerName{
     grid-area: name;
-    font-size: 0.75rem;
+    font-size: 1rem;
 }
 #developerPosition{
     grid-area: dev;
-    font-size: 0.625rem;
+    font-size: 0.875rem;
 }
 .devInfoContainer p{
     margin: 0 0 0 5px;
@@ -51,14 +56,17 @@ body{
 .navegationBar{
     background-color: black;
     grid-area: navBar;
+    height: 100%;
 }
 .navegationBar ul{
     list-style-type: none;
     display: flex;
     width: 100%;
+    height: 80%;
     margin: 0.2em 0;
     padding: 0;
     justify-content: space-around;
+    align-items: center;
 }
 .navegationBar a{
     color: white;

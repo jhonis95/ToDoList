@@ -57,21 +57,27 @@ body{
 /* ####################################### */
 /* home page */
 .homePage{
-    height: 90vh;
+    height: auto;
     display: flex;
     position: relative;
+    top: 10vh;
 }
 /* ####################################### */
 /* section addTask */
 .addTaskContainer{
-    height: 650px;
-    width: 300px;
+    /* background-color: #2B27F0; */
+    max-height: 640px;
+    max-width: 300px;
+    width: 273px;
+    height: 580px;
+
     transform: translateX(126%);
     background-image: url(images/label_menu_right.svg);
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
     position: absolute;
+    display: none;
 }
 .addTaskContainer form{
     /* the height set the distance of the add task btn */
@@ -123,16 +129,18 @@ body{
 }
 
 .taskListContainer{
-    margin: auto auto;
-    margin-top: 1.5rem;
+    margin: 1vh auto;
     width: 95%;
-    height: 95%;
+    height: 580px;
     background-image: url(images/listContainerBackground.svg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size:contain;
+    background-position: center;
 }
 .taskListContainer h2{
-    padding-top: 0.5rem;
+    padding-top: 1.7rem;
+    padding-bottom: 1rem;
+    margin: 0;
 }
 #taskList ul{
     padding: 0;
@@ -196,8 +204,11 @@ body{
 /* ####################################### */
 /* section addLabelContaine* background-size: contain; */
 .addLabelContainer{
-    height: 650px;
-    width: 300px;
+    max-height: 640px;
+    max-width: 300px;
+    width: 273px;
+    height: 580px;
+
     transform: translateX(-90%);
     background-image: url(images/label_menu_left.svg);
     background-size:contain;
@@ -322,7 +333,7 @@ body{
 }
 /* ####################################### */
 /* responsivite media querys */
-@media(max-width:560px){
+/* @media(max-width:560px){
     .navegationBar a{
         margin: 0;
     }
@@ -334,4 +345,4 @@ body{
     .navegationBar a{
         font-size: large;
     }
-}
+} */

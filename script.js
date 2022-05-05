@@ -207,16 +207,16 @@ function deleteTaskListBtn(){
 // **********************************
 //NEEED REVISION
 //Side menu Button
-const rightSideMenuBtn=document.getElementById('rightSideMenuBtn')
-rightSideMenuBtn.addEventListener('click',rightShowSideMenu)
-function rightShowSideMenu(){
-    addMenu=document.getElementsByClassName("addTaskContainer")
-    if(addMenu[0].style.transform!=`translateX(${36}%)`){
-        addMenu[0].style.transform=`translateX(${36}%)`
-    }else{
-        addMenu[0].style.transform=`translateX(${126}%)`
-    }
-}
+// const rightSideMenuBtn=document.getElementById('rightSideMenuBtn')
+// rightSideMenuBtn.addEventListener('click',rightShowSideMenu)
+// function rightShowSideMenu(){
+//     addMenu=document.getElementsByClassName("addTaskContainer")
+//     if(addMenu[0].style.transform!=`translateX(${36}%)`){
+//         addMenu[0].style.transform=`translateX(${36}%)`
+//     }else{
+//         addMenu[0].style.transform=`translateX(${126}%)`
+//     }
+// }
 const leftSideMenuBtn=document.getElementById("leftSideMenuBtn")
 leftSideMenuBtn.addEventListener('click',leftShowSideMenu)
 function leftShowSideMenu(){
