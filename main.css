@@ -35,18 +35,18 @@ body{
 .sidesMenuMiddleContainer{
     height: 80%;
     width: 90%;
-    position: fixed;
     display: flex;
     justify-content: center;
 }
-/* .addTaskContainer .sidesMenuMiddleContainer{
+.addTaskContainer .sidesMenuMiddleContainer{
     width: 100%;
-} */
+    margin-left: 5%;
+    margin-top: 5%;
+}
 .sidesMenuBottomContainer{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
     bottom: 1%;
     width: 90%;
     height: 15%;
@@ -73,11 +73,11 @@ body{
     max-width: 300px;
     width: 273px;
     height: 580px;
-
+    transform: translateX(0px);
     position: absolute;
-    left: 0;
-
-    /* transform: translateX(126%); */
+    left: 92vw;
+    transition: 0.5s;
+    transform: translateX(0px);
     background-image: url(images/label_menu_right.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -214,6 +214,7 @@ body{
     max-width: 300px;
     width: 273px;
     height: 580px;
+    transition: 0.5s;
 
     transform: translateX(-90%);
     background-image: url(images/label_menu_left.svg);

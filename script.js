@@ -89,6 +89,8 @@ function editLabel(){
     input.addEventListener('keypress',(e)=>{
         if(e.key==='Enter'){
             if(input.value==oldLabelName){//making sure the user did change the number
+                input.className=`labelName`
+                input.type="button"
                 return
             }
             Object.keys(myToDo).forEach((Label)=>{
@@ -112,6 +114,10 @@ function deleteLabel(){
 }
 function setCurrentLabel(){
     currentLabel=this.value
+    console.log(this.type)
+    if(this.type=="button"){
+        leftShowSideMenu()
+    }
     renderTask()
 }
 
@@ -205,20 +211,26 @@ function deleteTaskListBtn(){
     renderTask()
 }
 // **********************************
-//NEEED REVISION
-//Side menu Button
-// const rightSideMenuBtn=document.getElementById('rightSideMenuBtn')
-// rightSideMenuBtn.addEventListener('click',rightShowSideMenu)
-// function rightShowSideMenu(){
-//     addMenu=document.getElementsByClassName("addTaskContainer")
-//     if(addMenu[0].style.transform!=`translateX(${36}%)`){
-//         addMenu[0].style.transform=`translateX(${36}%)`
-//     }else{
-//         addMenu[0].style.transform=`translateX(${126}%)`
-//     }
-// }
+// NEEED REVISION
+// Side menu Button
+const rightSideMenuBtn=document.getElementById('rightSideMenuBtn')
+rightSideMenuBtn.addEventListener('click',rightShowSideMenu)
+
+function rightShowSideMenu(){
+    //left : 24vw to show and to hide is 92
+    //translateX(-245px)
+    let sideMenu=document.getElementById("rightSideMenu")
+    // console.dir(addMenu)
+    if(sideMenu.style.transform!=`translateX(${0}px)`){
+        sideMenu.style.transform=`translateX(${0}px)`
+    }else{
+        sideMenu.style.transform=`translateX(${-245}px)`
+    }
+}
+
 const leftSideMenuBtn=document.getElementById("leftSideMenuBtn")
 leftSideMenuBtn.addEventListener('click',leftShowSideMenu)
+//left : 24vw to show and to hide is 92
 function leftShowSideMenu(){
     addMenu=document.getElementsByClassName("addLabelContainer")
     if(addMenu[0].style.transform!=`translateX(${0}%)`){
