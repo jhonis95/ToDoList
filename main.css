@@ -39,9 +39,9 @@ body{
     display: flex;
     justify-content: center;
 }
-.addTaskContainer .sidesMenuMiddleContainer{
+/* .addTaskContainer .sidesMenuMiddleContainer{
     width: 100%;
-}
+} */
 .sidesMenuBottomContainer{
     display: flex;
     align-items: center;
@@ -62,6 +62,9 @@ body{
     position: relative;
     top: 10vh;
 }
+
+
+
 /* ####################################### */
 /* section addTask */
 .addTaskContainer{
@@ -71,20 +74,18 @@ body{
     width: 273px;
     height: 580px;
 
-    transform: translateX(126%);
+    position: absolute;
+    left: 0;
+
+    /* transform: translateX(126%); */
     background-image: url(images/label_menu_right.svg);
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
-    position: absolute;
-    display: none;
 }
 .addTaskContainer form{
     /* the height set the distance of the add task btn */
-    height: 100%;
-    width: 100%;
-    margin-top: 20px;
-    margin-right: 5px;
+    
     justify-content:end;
     display: grid;
     row-gap: 1px;
@@ -120,6 +121,11 @@ body{
     background-repeat: no-repeat;
     border: none;
 }
+
+
+
+
+
 /* ####################################### */
 /* selection taskList */
 .taskContainer{
