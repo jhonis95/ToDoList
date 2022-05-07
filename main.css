@@ -84,7 +84,7 @@ body{
 }
 .addTaskContainer form{
     /* the height set the distance of the add task btn */
-    
+    width: 235px;
     justify-content:end;
     display: grid;
     row-gap: 1px;
@@ -136,6 +136,8 @@ body{
 .taskListContainer{
     margin: 1vh auto;
     width: 95%;
+    min-width: 350px;
+    max-width: 400px;
     height: 580px;
     background-image: url(images/listContainerBackground.svg);
     background-repeat: no-repeat;
