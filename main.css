@@ -73,7 +73,6 @@ body{
     max-width: 300px;
     width: 273px;
     height: 580px;
-    transform: translateX(0px);
     position: absolute;
     left: 92vw;
     transition: 0.5s;

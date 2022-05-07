@@ -211,7 +211,6 @@ function deleteTaskListBtn(){
     renderTask()
 }
 // **********************************
-// NEEED REVISION
 // Side menu Button
 const rightSideMenuBtn=document.getElementById('rightSideMenuBtn')
 rightSideMenuBtn.addEventListener('click',rightShowSideMenu)
@@ -228,6 +227,7 @@ function rightShowSideMenu(){
     }
 }
 
+// NEEED REVISION
 const leftSideMenuBtn=document.getElementById("leftSideMenuBtn")
 leftSideMenuBtn.addEventListener('click',leftShowSideMenu)
 //left : 24vw to show and to hide is 92
