@@ -40,8 +40,6 @@ body{
 }
 .addTaskContainer .sidesMenuMiddleContainer{
     width: 100%;
-    margin-left: 5%;
-    margin-top: 5%;
 }
 .sidesMenuBottomContainer{
     display: flex;
@@ -85,12 +83,12 @@ body{
 .addTaskContainer form{
     /* the height set the distance of the add task btn */
     width: 235px;
+    max-height: 400px;
+    margin-top: 5%;
     justify-content:end;
     display: grid;
-    row-gap: 1px;
-    column-gap: 1px;
-    grid-template-columns: 0fr 0fr;
-    grid-template-rows: 0fr 0.3fr 0.05fr;
+    row-gap: 2px;
+    grid-template-rows: 0fr 0.1fr 0.075fr;
     grid-template-areas: "newTask pickColor" "description description" "date date";
 }
 .menuTitle{
@@ -100,6 +98,7 @@ body{
 }
 #newTask{
     grid-area: newTask;
+    width: 150px;
 }
 #pickColor{
     grid-area: pickColor;
@@ -148,6 +147,11 @@ body{
     padding-top: 1.7rem;
     padding-bottom: 1rem;
     margin: 0;
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.30s;
 }
 #taskList ul{
     padding: 0;
@@ -166,6 +170,13 @@ body{
     grid-template-rows: repeat(2, 0.5fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+
+    /* animation */
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.5s;
 }
 /* stting the style of all task outputs */
 .taskNameOutput{
@@ -207,6 +218,8 @@ body{
     grid-area: 1 / 8 / 3 / 9;
     align-self: center;
     justify-self: center;
+    border: none;
+    background-color: white;
 }
 /* ####################################### */
 /* section addLabelContaine* background-size: contain; */
@@ -247,7 +260,6 @@ body{
 }
 .editLabelBtn{
     background: url(images/editing.png);
-    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border: none;
@@ -256,9 +268,9 @@ body{
     padding: 0%;
 }
 .labelName{
-    font-size: large;
+    font-size: 1.25rem;
     text-align: center;
-    padding: 0%;
+    padding:3px 0px 0px 0px;
     margin: 0%;
     border: black solid 1px;
     border-radius: 10px;
@@ -284,10 +296,11 @@ body{
     border: black solid 2px;
     border-radius: 10px;
     background-color: white;
-    width: 45%;
-    height: 20%;
+    width: 200px;
+    height: 210px;
     z-index: 4;
-    margin: 20% 8%;
+    left: 25%;
+    align-self: center;
     overflow: auto;
     position: fixed;
     display: grid;
@@ -354,3 +367,11 @@ body{
         font-size: large;
     }
 } */
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
