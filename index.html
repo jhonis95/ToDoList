@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="about.css">
     <title>To Do List</title>
 </head>
-<body>
+<body id="home">
     <header class="header">
         <div class="devInfoContainer">
             <img src="images/Logo.png" alt="icon image" id="icon">
@@ -32,8 +32,8 @@
         </nav>
     </header>
 
-    <section id="home" class="homePage">
-        <div class="addLabelContainer">
+    <section class="homePage">
+        <div  class="addLabelContainer">
             <div class="sideMenuHeadContainer">
                 <h2 class="menuTitle">My To Do</h2>
                 <button id="leftSideMenuBtn"></button>            
@@ -92,10 +92,10 @@
     </section>
     <section class="about-page" id="about">
         <div class="about-me">
-            <img src="" alt="developer" class="about-img">
+            <img src="https://avatars.githubusercontent.com/jhonis95" alt="developer" class="about-img">
             <h2 class="menuTitle">About Me</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nesciunt inventore similique itaque, dolore, nostrum iusto blanditiis modi, ipsum laboriosam expedita quidem dolor. Corporis illum doloribus officiis eaque, odit omnis.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo laboriosam ad repellendus, dolorum iure magnam fugit odio cupiditate ipsum voluptas quae fugiat sapiente id quis nihil est ullam molestias adipisci.</p>
+            <p id="devDescription"></p>
+            <p id="devDescription2"></p>
         </div>
         <div class="about-project">
             <img src="" alt="project" class="about-img">
@@ -105,5 +105,6 @@
         </div>
     </section>
     <script type="text/javascript" src="script.js"></script>
+    <script src="about.js"></script>
 </body>
 </html>

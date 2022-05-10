@@ -72,7 +72,7 @@ body{
     width: 273px;
     height: 580px;
     position: absolute;
-    left: 92vw;
+    left: 93vw;
     transition: 0.5s;
     transform: translateX(0px);
     background-image: url(images/label_menu_right.svg);
@@ -106,6 +106,8 @@ body{
 }
 #date{
     grid-area: date;
+    width: 95%;
+    align-self: center;
 }
 #description{
     grid-area: description;
@@ -299,6 +301,7 @@ body{
     width: 200px;
     height: 210px;
     z-index: 4;
+    /* left is to put modal in the center */
     left: 25%;
     align-self: center;
     overflow: auto;

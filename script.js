@@ -109,12 +109,14 @@ function deleteLabel(){
     let input=this.parentElement.children[1]
     if(myToDo[`${input.value}`].labelName===`${input.value}`){
         delete myToDo[`${input.value}`]
+        currentLabel=Object.keys(myToDo)[0]
         renderLabelList()
+        renderTask()
+        leftShowSideMenu()
     }
 }
 function setCurrentLabel(){
     currentLabel=this.value
-    console.log(this.type)
     if(this.type=="button"){
         leftShowSideMenu()
     }
@@ -152,10 +154,10 @@ function renderTask(){
     let ul=document.createElement("ul")//creating new ul
     
     taskListContainer.replaceChild(ul,oldUl)//replacing the old ul for a new one
-    ul.id="list"//setting new ul to oldUl id to list in that way we dont have problem to reuse the render function
-    
+    ul.id="list"//setting new ul to oldUl id to list in that way we dont have problem to reuse the render function    
     //make list show in the DOM
     let label=myToDo[currentLabel]
+
     Object.keys(label).forEach((task)=>{//obj.key is a function that returns a array and forEach
         if(label.labelName===label[task]){//dont print the name of the label
             document.getElementById('labelName').innerText=label[task]
@@ -178,7 +180,7 @@ function renderTask(){
         taskDescription.className="taskDescriptionOutput"
         taskDate.className="taskDateOutput"
         taskColor.className="taskColorOutput"
-        
+
         ul.appendChild(li)
         li.appendChild(taskColor)
         li.appendChild(checkBtn)
