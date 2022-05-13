@@ -158,6 +158,19 @@ function renderTask(){
     //make list show in the DOM
     let label=myToDo[currentLabel]
 
+    //tests if the myToDo is empty
+    if(Object.keys(myToDo).length===0){
+        let notice=document.createElement("h4")
+        notice.className="taskNameOutput"
+        notice.innerText=`
+        The To Do List is empty please make a new Label and add a task
+        `
+        //erasing the label name in the task list
+        document.getElementById('labelName').innerText=""
+        ul.appendChild(notice)
+        return
+    }
+
     Object.keys(label).forEach((task)=>{//obj.key is a function that returns a array and forEach
         if(label.labelName===label[task]){//dont print the name of the label
             document.getElementById('labelName').innerText=label[task]

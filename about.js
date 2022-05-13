@@ -1,6 +1,5 @@
 const devDescription=document.getElementById("devDescription")
 const devDescription2=document.getElementById("devDescription2")
-console.dir(devDescription)
 devDescription.textContent=`
 Estudar para me tornar programador me fez criar uma paixão por produtividade e otimização.
 Eu acredito que podemos sempre fazer as coisas melhores, não só no trabalho como também nas coisas do dia a dia,
