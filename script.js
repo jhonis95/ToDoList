@@ -10,17 +10,21 @@ confirmAddLabelBtn.addEventListener('click',confirmAddNewLabel)
 
 var currentLabel="Today";
 
-function label(labelName){//constructor
-  {
-    this.labelName=labelName
-  }
+class label {
+    constructor(labelName) {
+        {
+            this.labelName = labelName;
+        }
+    }
 }
-function task(title,description,color,date,check){// constructor
-  this.title=title;
-  this.description=description;   
-  this.check= check; 
-  this.color= color;
-  this.date= date;
+class task {
+    constructor(title, description, color, date, check) {
+        this.title = title;
+        this.description = description;
+        this.check = check;
+        this.color = color;
+        this.date = date;
+    }
 }
 //creacting the todo:
 let myToDo=[]//object that have all the labels
