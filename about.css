@@ -1,10 +1,9 @@
 .about-page{
     margin-top: 12vh;
-    height: 110vh;
 }
 .about-page p{
     text-align: justify;
-    margin-right: 10px;
+    margin:0px 10px
 }
 .about-img{
     width: 100px;
@@ -13,11 +12,18 @@
     background-color: aquamarine;
     float: left;
     margin: 10px;
-    margin-top: 60px;
+    margin-top: 40px;
+    filter: brightness(120%)
 }
-.about-me{
-    height: 50%;
+.about-project div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.about-project{
-    height: 50%;
+#goToGithub{
+    width: 50%;
+    font-size: x-large;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
 }
