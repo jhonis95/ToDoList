@@ -75,7 +75,7 @@ body{
     left: 93vw;
     transition: 0.5s;
     transform: translateX(0px);
-    background-image: url(images/label_menu_right.svg);
+    background-image: url(img/label_menu_right.svg);
     background-size: contain;
     background-repeat: no-repeat;
     z-index: 1;
@@ -116,7 +116,7 @@ body{
     width: 1.5rem;
     height: 1.5rem;
     margin: 0px 0px 0px 2px;
-    background-image: url(images/to-do-list.png);
+    background-image: url(img/to-do-list.png);
     background-size: cover;
     background-repeat: no-repeat;
     border: none;

@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/about.css">
     <title>To Do List</title>
 </head>
 <body id="home">
     <header class="header">
         <div class="devInfoContainer">
-            <img src="images/Logo.png" alt="icon image" id="icon">
+            <img src="img/Logo.png" alt="icon image" id="icon">
             <p id="developerName">Jonatan de Oliveira</p>
             <p id="developerPosition">jr front end developer</p>
         </div>
@@ -90,8 +90,8 @@
             <button class="actionBtn" id="confirmBtn"></button>
         </div>
     </section>
-    <section class="about-page" id="about">
-        <div class="about-me">
+    <section class="about-page">
+        <div class="about-me" id="about">
             <img src="https://avatars.githubusercontent.com/jhonis95" alt="developer" class="about-img">
             <h2 class="menuTitle">About Me</h2>
             <p id="devDescription"></p>
@@ -112,7 +112,22 @@
             </div>
         </div>
     </section>
-    <script type="text/javascript" src="script.js"></script>
-    <script src="about.js"></script>
+    <section class="contact">
+        <div class="contact-social-media">
+            <ul class="social-media">
+
+            </ul>
+        </div>
+        <div class="contact-email">
+            <h2>Send me a email</h2>
+            <input type="text" name="" id="">
+            <input type="text" name="" id="">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+    </section>
+    <script type="text/javascript" src="./js/script.js"></script>
+    <script src="./js/about.js"></script>
+    <script src="./js/contact.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js" integrity="sha512-DZqqY3PiOvTP9HkjIWgjO6ouCbq+dxqWoJZ/Q+zPYNHmlnI2dQnbJ5bxAHpAMw+LXRm4D72EIRXzvcHQtE8/VQ==" crossorigin="anonymous"></script>
 </body>
 </html>
