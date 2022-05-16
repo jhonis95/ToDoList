@@ -140,7 +140,7 @@ body{
     min-width: 350px;
     max-width: 400px;
     height: 580px;
-    background-image: url(images/listContainerBackground.svg);
+    background-image: url(img/listContainerBackground.svg);
     background-repeat: no-repeat;
     background-size:contain;
     background-position: center;
@@ -233,7 +233,7 @@ body{
     transition: 0.5s;
 
     transform: translateX(-90%);
-    background-image: url(images/label_menu_left.svg);
+    background-image: url(img/label_menu_left.svg);
     background-size:contain;
     background-repeat: no-repeat;
     z-index: 3;
@@ -243,7 +243,7 @@ body{
     width: 1.2rem;
     height: 1.2rem;
     margin: 0px 4px 0px 0px;
-    background-image: url(images/list.png);
+    background-image: url(img/list.png);
     background-size: cover;
     background-repeat: no-repeat;
     border: none;
@@ -261,7 +261,7 @@ body{
     align-items: center;
 }
 .editLabelBtn{
-    background: url(images/editing.png);
+    background: url(img/editing.png);
     background-repeat: no-repeat;
     background-size: cover;
     border: none;
@@ -283,7 +283,7 @@ body{
     box-shadow:orange 0px 0px 10px;
 }
 .deleteLabel{
-    background: url(images/delite_label.svg);
+    background: url(img/delite_label.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -303,7 +303,6 @@ body{
     z-index: 4;
     /* left is to put modal in the center */
     left: 25%;
-    align-self: center;
     overflow: auto;
     position: fixed;
     display: grid;
@@ -330,13 +329,13 @@ body{
     justify-self: center;
 }
 #confirmBtn{
-    background: url(images/check.png);
+    background: url(img/check.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 #cancelBtn{
-    background: url(images/multiply.png);
+    background: url(img/multiply.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
