@@ -1,4 +1,6 @@
+
 const contact=document.getElementById("social-media-list")
+
 
 class socialMedia{
     constructor(icon,socialMedia,description,link){
@@ -37,6 +39,7 @@ class socialMedia{
         console.log("hi link is:"+this.link)
         location.href=this.link//sende user to social media page
     }
+
 }
 let socialMediaList=[]
 socialMediaList.push(new socialMedia("https://cdn-icons-png.flaticon.com/512/733/733609.png","GitHub","here your can see more about what i had been doing ","https://github.com/jhonis95"))
@@ -45,5 +48,6 @@ socialMediaList.push(new socialMedia("https://cdn-icons.flaticon.com/png/512/367
 for(let task of socialMediaList){
     task.renderSM()
 }
+
 
 
