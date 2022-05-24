@@ -5,6 +5,12 @@ body{
     overflow-x: hidden;
 }
 /* universal classes */
+.btnContainer{
+    /* go to external link btn */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .addBtn{
     width: 70%; 
     border: 1px solid black;
