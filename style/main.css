@@ -70,7 +70,7 @@ body{
     max-height: 640px;
     max-width: 300px;
     width: 273px;
-    height: 580px;
+    height: 490px;
     position: absolute;
     left: 93vw;
     transition: 0.5s;
@@ -115,7 +115,8 @@ body{
 #rightSideMenuBtn{   
     width: 1.5rem;
     height: 1.5rem;
-    margin: 0px 0px 0px 2px;
+    padding: 0;
+    margin: 0px 0px 3px 2px;
     background-image: url(img/to-do-list.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -229,7 +230,7 @@ body{
     max-height: 640px;
     max-width: 300px;
     width: 273px;
-    height: 580px;
+    height: 490px;
     transition: 0.5s;
 
     transform: translateX(-90%);
@@ -242,7 +243,7 @@ body{
 #leftSideMenuBtn{
     width: 1.2rem;
     height: 1.2rem;
-    margin: 0px 4px 0px 0px;
+    margin: 0px 4px 3px 0px;
     background-image: url(img/list.png);
     background-size: cover;
     background-repeat: no-repeat;
