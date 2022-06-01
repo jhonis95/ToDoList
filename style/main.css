@@ -5,6 +5,17 @@ body{
     overflow-x: hidden;
 }
 /* universal classes */
+<<<<<<< HEAD
+=======
+.goToBtn{
+    width: 60%;
+    font-size: x-large;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+>>>>>>> bf5d710b3dce870bd1de55a8feadf28794b518a3
 .btnContainer{
     /* go to external link btn */
     display: flex;
