@@ -1,6 +1,8 @@
 const devDescription=document.getElementById("devDescription")
 const devDescription2=document.getElementById("devDescription2")
 const aboutProject=document.getElementById("aboutProject")
+const projectImg=document.getElementById("projectImg")
+const goToRository=document.getElementById("goToRository")
 
 const moreRight=document.getElementById("goToRight")
 const moreLeft=document.getElementById("goToLeft")
@@ -42,21 +44,28 @@ class card{
         switch(true){
             case this.currentPosition===1:
                 aboutProject.textContent=this.aboutPj.content
+                projectImg.style.background=`linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1)),url('/style/img/projectImg.png')`
                 break;
             case this.currentPosition===2:
                 aboutProject.textContent=this.funcEditDelete.function+"\n"+this.funcEditDelete.content
+                projectImg.style.background=`linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1)),url('/style/img/funcEditDelete.png')`
                 break;
             case this.currentPosition===3:
                 aboutProject.textContent=this.funcCreateTask.function+"\n"+this.funcCreateTask.content
+                projectImg.style.background=`linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1)),url('/style/img/funcCreateTask.png')`
                 break;
             default:
                 break;
         }
     }
+    goRository=()=>{
+        location.href="https://github.com/jhonis95/ToDoList"
+    }
 }
 const projecCard=new card
 moreRight.addEventListener('click',projecCard.goToRigt)
 moreLeft.addEventListener('click',projecCard.goToLeft)
+goToRository.addEventListener('click',projecCard.goRository)
 
 devDescription.textContent=`
 Estudar para me tornar programador me fez criar uma paixão por produtividade e otimização.
