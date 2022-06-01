@@ -1,6 +1,7 @@
 const devDescription=document.getElementById("devDescription")
 const devDescription2=document.getElementById("devDescription2")
 const aboutProject=document.getElementById("aboutProject")
+
 const projectImg=document.getElementById("projectImg")
 const goToRository=document.getElementById("goToRository")
 
@@ -65,6 +66,7 @@ class card{
 const projecCard=new card
 moreRight.addEventListener('click',projecCard.goToRigt)
 moreLeft.addEventListener('click',projecCard.goToLeft)
+
 goToRository.addEventListener('click',projecCard.goRository)
 
 devDescription.textContent=`
