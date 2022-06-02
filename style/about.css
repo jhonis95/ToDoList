@@ -6,7 +6,9 @@
 }
 .about-page p{
     text-align: justify;
-    margin:0px 10px
+    margin:0px 10px;
+    font-size: 0.90rem;
+    font-family: sans-serif;
 }
 .about-img{
     width: 100px;
@@ -28,7 +30,7 @@
     text-align: center;
 }
 .projectInformation{
-    height: 390px;
+    height: 400px;
     position: relative;
 }
 .projectInformation ul{
@@ -37,16 +39,6 @@
     padding: 0;
     margin: 0;
     color: white;
-}
-#projectImg{
-    background: linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1)),url('/style/img/projectImg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* z-index: -1; */
 }
 .moveBtn{
     margin: 5px;
@@ -62,4 +54,31 @@
     height: 120px;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.projectImg{
+    background: linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1)),url('./img/projectImg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.funcEditDelete{
+    background: linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1)),url('./img/funcEditDelete.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.funcCreateTask{
+    background: linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1)),url('./img/funcCreateTask.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
