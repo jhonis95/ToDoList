@@ -182,7 +182,7 @@ body{
     border-radius: 5px;
     margin: 0.5rem auto;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(2, 1fr) repeat(4,1.8fr) repeat(2, 1fr);
     grid-template-rows: repeat(2, 0.5fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -369,20 +369,6 @@ body{
     display: none;
 }
 /* ####################################### */
-/* responsivite media querys */
-/* @media(max-width:560px){
-    .navegationBar a{
-        margin: 0;
-    }
-}
-@media(max-width:370px){
-    .title h1{
-        font-size: x-large;
-    }
-    .navegationBar a{
-        font-size: large;
-    }
-} */
 @keyframes fadeInOpacity {
 	0% {
 		opacity: 0;

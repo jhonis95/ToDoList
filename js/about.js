@@ -45,36 +45,37 @@ class card{
         switch(true){
             case this.currentPosition===1:
                 aboutProject.textContent=this.aboutPj.content
-                projectImg.style.background=`linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1)),url('/style/img/projectImg.png')`
+                projectImg.className='projectImg'
                 break;
             case this.currentPosition===2:
                 aboutProject.textContent=this.funcEditDelete.function+"\n"+this.funcEditDelete.content
-                projectImg.style.background=`linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1)),url('/style/img/funcEditDelete.png')`
+                projectImg.classList='funcEditDelete'
                 break;
             case this.currentPosition===3:
                 aboutProject.textContent=this.funcCreateTask.function+"\n"+this.funcCreateTask.content
-                projectImg.style.background=`linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1)),url('/style/img/funcCreateTask.png')`
+                projectImg.className='funcCreateTask'
                 break;
             default:
                 break;
         }
     }
-    goRository=()=>{
-        location.href="https://github.com/jhonis95/ToDoList"
+    goRepository=()=>{
+        window.open('https://github.com/jhonis95/ToDoList')
     }
 }
 const projecCard=new card
 moreRight.addEventListener('click',projecCard.goToRigt)
 moreLeft.addEventListener('click',projecCard.goToLeft)
 
-goToRository.addEventListener('click',projecCard.goRository)
+goToRository.addEventListener('click',projecCard.goRepository)
 
 devDescription.textContent=`
-Estudar para me tornar programador me fez criar uma paixão por produtividade e otimização.
-Eu acredito que podemos sempre fazer as coisas melhores, não só no trabalho como também nas coisas do dia a dia,
-acredito que por isso eu sou muito aberto para aprender e para ouvir críticas que vão me ajudar a melhorar.
+Studying to become a programmer made me develop a passion for productivity and optimization.
+I believe that we can always make things better, not only at work but also in everyday things,
+I believe that's why I'm very open to learn and to hear criticism that will help me improve.
 `
-devDescription2.textContent+=`No Tempo que estudei fora do Brasil tive a oportunidade não só de aprender novas línguas, mas como também a conviver com pessoas de culturas diferentes que me fizeram ter uma mente mais aberta e um maior respeito ao próximo.
-Para o Futuro, me vejo trabalhando como desenvolvedor full stack ajudando aqueles que estão começando no desenvolvimento Web a criar grandes coisas.`
+devDescription2.textContent+=`
+During the time I studied outside Brazil, I had the opportunity not only to learn new languages, but also to live with people from different cultures that made me have a more open mind and greater respect for others.
+For the future, I see myself working as a full stack developer helping those new to web development to create great things.`
 
 aboutProject.textContent= projecCard.aboutPj.content
