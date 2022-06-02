@@ -41,7 +41,7 @@ class card{
             this.render()
         }
     }
-    render=(evt)=>{
+    render=()=>{
         switch(true){
             case this.currentPosition===1:
                 aboutProject.textContent=this.aboutPj.content
