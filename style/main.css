@@ -6,7 +6,7 @@ body{
 }
 /* universal classes */
 .goToBtn{
-    width: 60%;
+    width: 70%;
     font-size: x-large;
     border-radius: 5px;
     padding: 5px;
@@ -40,7 +40,6 @@ body{
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 2%; 
 }
 .addTaskContainer .headerSideMenuLine{
     margin-left: 20%;
