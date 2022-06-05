@@ -9,6 +9,7 @@
     margin:0px 10px;
     font-size: 0.90rem;
     font-family: sans-serif;
+    color:var(--text-color);
 }
 .about-img{
     width: 100px;
@@ -28,6 +29,7 @@
     border: 2px solid black;
     border-radius: 10px;
     text-align: center;
+    background-color: white;
 }
 .projectInformation{
     height: 400px;
@@ -54,6 +56,7 @@
     height: 120px;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: white;
 }
 .projectImg{
     background: linear-gradient(to bottom, rgba(255,255,255,0),rgba(0,0,0,1)),url('./img/projectImg.png');
