@@ -179,6 +179,7 @@ body{
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: 0.30s;
+    color: var(--text-color);
 }
 #taskList ul{
     padding: 0;
