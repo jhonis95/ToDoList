@@ -23,6 +23,9 @@
     width: 85vw;
     padding: 3px;
     text-align: center;
+
+    background-color: var(--main-color);
+    color: var(--text-color);
 }
 .sm-icon{
     width: 35;

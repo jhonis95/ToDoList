@@ -14,7 +14,7 @@ body{
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "devinfo titleH1" "navBar navBar";
     z-index: 5;
-    background-color: white;
+    background-color: var(--main-color);
 }
 .devInfoContainer{
     display: grid;
@@ -31,10 +31,12 @@ body{
 #developerName{
     grid-area: name;
     font-size: 0.875rem;
+    color: var(--text-color);
 }
 #developerPosition{
     grid-area: dev;
     font-size: 0.75rem;
+    color: var(--text-color);
 }
 .devInfoContainer p{
     margin: 0 0 0 5px;
@@ -52,9 +54,10 @@ body{
     align-self: center;
     margin: 0;
     font-size: 1.125em;
+    color: var(--text-color);
 }
 .navegationBar{
-    background-color: black;
+    background-color:var(--btn-color);
     grid-area: navBar;
     height: 100%;
 }
@@ -69,7 +72,7 @@ body{
     align-items: center;
 }
 .navegationBar a{
-    color: white;
+    color: var(--main-color);
     font-size:1.125rem;
     text-decoration:none;
 }
