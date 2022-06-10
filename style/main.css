@@ -3,17 +3,26 @@ body{
     margin: auto;
     height: 100vh;
     overflow-x: hidden;
+    background-color: var(--main-color);
+}
+:root, :root.light{
+    --main-color:#E9E9EB;
+    --text-color:#3E619B;
+    --btn-color:#42506B;
+    --atention-color:#EF4B4C;
 }
 /* universal classes */
 <<<<<<< HEAD
 =======
 .goToBtn{
-    width: 60%;
+    width: 70%;
     font-size: x-large;
     border-radius: 5px;
     padding: 5px;
     text-align: center;
     margin-bottom: 2vh;
+    background-color: var(--atention-color);
+    color: var(--main-color);
 }
 >>>>>>> bf5d710b3dce870bd1de55a8feadf28794b518a3
 .btnContainer{
@@ -27,8 +36,8 @@ body{
     border: 1px solid black;
     border-radius: 5px;
     padding: 5px;
-    background-color: #2B27F0;
-    color: white;
+    background-color:var(--atention-color);
+    color: var(--main-color);
     font-size:large;
     font-weight:bold;
 }
@@ -43,7 +52,6 @@ body{
     display: flex;
     align-items: center;
     width: 100%;
-    margin-top: 2%; 
 }
 .addTaskContainer .headerSideMenuLine{
     margin-left: 20%;
@@ -64,7 +72,7 @@ body{
     justify-content: center;
     bottom: 1%;
     width: 90%;
-    height: 15%;
+    height: 12%;
 }
 .addTaskContainer .sidesMenuBottomContainer{
     margin-left: 10%;
@@ -75,15 +83,17 @@ body{
     height: auto;
     display: flex;
     position: relative;
-    top: 10vh;
+    top: 10.5vh;
 }
 
 
 
 /* ####################################### */
 /* section addTask */
+.addTaskContainer input,textarea{
+    background-color: var(--main-color);
+}
 .addTaskContainer{
-    /* background-color: #2B27F0; */
     max-height: 640px;
     max-width: 300px;
     width: 273px;
@@ -91,7 +101,6 @@ body{
     position: absolute;
     left: 93vw;
     transition: 0.5s;
-    transform: translateX(0px);
     background-image: url(img/label_menu_right.svg);
     background-size: contain;
     background-repeat: no-repeat;
@@ -112,6 +121,7 @@ body{
     margin: 0;
     width: 100%;
     text-align: center;
+    color: var(--text-color);
 }
 #newTask{
     grid-area: newTask;
@@ -172,11 +182,15 @@ body{
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
 	animation-duration: 0.30s;
+    color: var(--text-color);
 }
 #taskList ul{
     padding: 0;
     margin: 0;
     list-style-type: none;
+    overflow:hidden;
+    overflow-y: scroll;
+    height: 440px;
 }
 #taskList li{
     width: 90%;
@@ -186,10 +200,12 @@ body{
     border-radius: 5px;
     margin: 0.5rem auto;
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(2, 1fr) repeat(4,1.8fr) repeat(2, 1fr);
     grid-template-rows: repeat(2, 0.5fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    background-color: var(--text-color);
+    color: var(--main-color);
 
     /* animation */
     opacity: 1;
@@ -232,14 +248,13 @@ body{
 .deleteBtn{
     background: url(https://img.icons8.com/ios-glyphs/30/000000/filled-trash.png) no-repeat;
     background-position: center; 
-    background-color: rgb(219, 218, 215);
     width: 2.25em;
     height: 2.25em;
     grid-area: 1 / 8 / 3 / 9;
     align-self: center;
     justify-self: center;
     border: none;
-    background-color: white;
+    background-color:none;
 }
 /* ####################################### */
 /* section addLabelContaine* background-size: contain; */
@@ -249,7 +264,6 @@ body{
     width: 273px;
     height: 490px;
     transition: 0.5s;
-
     transform: translateX(-90%);
     background-image: url(img/label_menu_left.svg);
     background-size:contain;
@@ -269,7 +283,9 @@ body{
 #labelList{
     padding: 0%;
     list-style-type:none;
-    width: 90%; 
+    width: 90%;
+    overflow:hidden;
+    overflow-y: scroll; 
 }
 #labelList li{
     text-align: center;
@@ -295,7 +311,8 @@ body{
     border: black solid 1px;
     border-radius: 10px;
     width: 75%;
-    background-color: rgb(219, 218, 215);
+    background-color:var(--btn-color);
+    color: var(--main-color);
 }
 .inFocusToEdit{
     box-shadow:orange 0px 0px 10px;
@@ -373,20 +390,6 @@ body{
     display: none;
 }
 /* ####################################### */
-/* responsivite media querys */
-/* @media(max-width:560px){
-    .navegationBar a{
-        margin: 0;
-    }
-}
-@media(max-width:370px){
-    .title h1{
-        font-size: x-large;
-    }
-    .navegationBar a{
-        font-size: large;
-    }
-} */
 @keyframes fadeInOpacity {
 	0% {
 		opacity: 0;

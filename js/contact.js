@@ -44,7 +44,8 @@ class socialMedia{
         SM.addEventListener('click',this.goToLink)
     }
     goToLink=()=>{
-        location.href=this.link//sende user to social media page
+       //sende user to social media page
+        window.open(this.link)
     }
 
 }
