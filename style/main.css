@@ -21,6 +21,7 @@ body{
     margin-bottom: 2vh;
     background-color: var(--atention-color);
     color: var(--main-color);
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
 }
 .btnContainer{
     /* go to external link btn */
