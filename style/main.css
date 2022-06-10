@@ -12,8 +12,6 @@ body{
     --atention-color:#EF4B4C;
 }
 /* universal classes */
-<<<<<<< HEAD
-=======
 .goToBtn{
     width: 70%;
     font-size: x-large;
@@ -24,7 +22,6 @@ body{
     background-color: var(--atention-color);
     color: var(--main-color);
 }
->>>>>>> bf5d710b3dce870bd1de55a8feadf28794b518a3
 .btnContainer{
     /* go to external link btn */
     display: flex;

@@ -20,11 +20,7 @@
     border: 2px black solid;
     border-radius: 10px;
     margin: 5px;
-<<<<<<< HEAD
-    width: 80vw;
-=======
     width: 85vw;
->>>>>>> bf5d710b3dce870bd1de55a8feadf28794b518a3
     padding: 3px;
     text-align: center;
 
@@ -60,4 +56,16 @@
     align-self: center;
     margin: 0;
     grid-area: 1 / 5 / 3 / 6;
+}
+#sendEmail{
+    margin: 10px 10px;
+    text-align: center;
+}
+#sendEmail input{
+    width: 150px;
+    height: 1.5rem;
+    margin-bottom: 5px;
+}
+#sendEmail textarea{
+    width: 315px;
 }
