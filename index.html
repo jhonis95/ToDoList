@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/header.css">
     <link rel="stylesheet" href="./style/main.css">
     <link rel="stylesheet" href="./style/header.css">
     <link rel="stylesheet" href="./style/about.css">
     <link rel="stylesheet" href="./style/contact.css">
     <title>To Do List</title>
 </head>
-<body id="home">
-    <header class="header">
+<body>
+    <header>
         <div class="devInfoContainer">
             <img src="./style/img/Logo.png" alt="icon image" id="icon">
             <p id="developerName">Jonatan de Oliveira</p>
@@ -21,118 +22,19 @@
         <nav class="navegationBar">
             <ul>
                 <li>
-                    <a href="#home">My ToDo</a>
+                    <a href="/" onclick="router()">Home</a>
                 </li>
                 <li>
-                    <a href="#about">About</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact Me</a>
+                    <a href="/app" onclick="router()">To Do List</a>
                 </li>
             </ul>
         </nav>
     </header>
-
-    <section class="homePage">
-        <div  class="addLabelContainer">
-            <div class="sideMenuHeadContainer">
-                <h2 class="menuTitle">My To Do</h2>
-                <button id="leftSideMenuBtn"></button>            
-            </div>
-            <div class="headerSideMenuLine"></div>
-            <div class="sidesMenuMiddleContainer" id="labelListContainer">
-                <ul id="labelList">
-                </ul>
-            </div>
-            <div class="sidesMenuBottomContainer" id="addLabel">
-                <button class="addBtn" id="addLabelBtn">Add Label</button>
-            </div>
-        </div>
-
-        <div class="taskContainer">
-            <div id="taskList" class="taskListContainer">
-                <h2 id="labelName"></h2>
-                <ul id="list">
-                </ul>
-            </div>
-        </div>
-
-        <div class="addTaskContainer" id="rightSideMenu" style="transform: translateX(0px);">
-            <div class="sideMenuHeadContainer">
-                <button id="rightSideMenuBtn"></button>
-                <h2 class="menuTitle">New Task:</h2>
-            </div>
-            <div class="headerSideMenuLine"></div>
-            <div class="sidesMenuMiddleContainer">
-                <form name="ToDo" action="" method="GET">
-                    <input type="text" name="newTask" id="newTask" placeholder="my new task">
-                    <input type="color" list="colorOptions" id="pickColor">
-                    <datalist id="colorOptions">
-                        <option value="#000000">black</option>
-                        <option value="#808080">gray</option>
-                        <option value="#FFFFFF">white</option>
-                        <option value="#FF0000">red</option>
-                        <option value="#008000">green</option>
-                        <option value="#FFFF00">yellow</option>
-                        <option value="#00bfff">deepskyblue</option>
-                    </datalist>
-                    <input type="date" id="date">
-                    <textarea name="taskDescription" id="description" cols="10" rows="1" placeholder="task description"></textarea>
-                </form>
-            </div>
-            <div class="sidesMenuBottomContainer">
-                <button type="button" class="addBtn" id="addBtn">add task</button>
-            </div>
-        </div>
-        <div class="addLabelModal hide" id="addLabelModal">
-            <h4>Add a new label</h4>
-            <input type="text" name="labelName" id="newLabel">
-            <button class="actionBtn" id="cancelBtn"></button>
-            <button class="actionBtn" id="confirmBtn"></button>
-        </div>
-    </section>
-
-    <section class="about-page" id="about">
-        <div class="about-me">
-            <img src="https://avatars.githubusercontent.com/jhonis95" alt="developer" class="about-img">
-            <h2 class="menuTitle">About Me</h2>
-            <p id="devDescription"></p>
-            <p id="devDescription2"></p>
-        </div>
-        <div class="projectCard">
-            <h2 class="menuTitle">About Project</h2>
-            <div class="projectInformation">
-                <div id="projectImg"></div>
-                <ul>
-                    <p id="aboutProject"></p>
-                </ul>
-                <div class="buttonsContainer">
-                    <button class="moveBtn" id="goToLeft"><</button>
-                    <button class="moveBtn" id="goToRight">></button>
-                    <div class="btnContainer">
-                        <button class="goToBtn" id="goToRository">Projet Repository</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <h1>contact me:</h1>
-        <p>Let’s make great things together!!</p>
-        <div class="contact-social-media">
-            <ul class="social-media-list" id="social-media-list">
-
-            </ul>
-        </div>
-        <div class="btnContainer">
-            <button class="goToBtn">My Resume/CV</button>
-        </div>
-    </section>
+    <div id="contentPage"></div>
+    <script src="./router.js"></script>
     
-    <script type="text/javascript" src="./js/script.js"></script>
-    <script src="./js/about.js"></script>
-    <script src="./js/contact.js"></script>
-    
+    <script type="text/javascript" src="./js/about.js"></script>
+    <script type="text/javascript" src="./js/contact.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
 </body>
 </html>

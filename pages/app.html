@@ -1,0 +1,58 @@
+<section class="homePage">
+    <div  class="addLabelContainer">
+        <div class="sideMenuHeadContainer">
+            <h2 class="menuTitle">My To Do</h2>
+            <button id="leftSideMenuBtn"></button>            
+        </div>
+        <div class="headerSideMenuLine"></div>
+        <div class="sidesMenuMiddleContainer" id="labelListContainer">
+            <ul id="labelList">
+            </ul>
+        </div>
+        <div class="sidesMenuBottomContainer" id="addLabel">
+            <button class="addBtn" id="addLabelBtn">Add Label</button>
+        </div>
+    </div>
+
+    <div class="taskContainer">
+        <div id="taskList" class="taskListContainer">
+            <h2 id="labelName"></h2>
+            <ul id="list">
+            </ul>
+        </div>
+    </div>
+
+    <div class="addTaskContainer" id="rightSideMenu" style="transform: translateX(0px);">
+        <div class="sideMenuHeadContainer">
+            <button id="rightSideMenuBtn"></button>
+            <h2 class="menuTitle">New Task:</h2>
+        </div>
+        <div class="headerSideMenuLine"></div>
+        <div class="sidesMenuMiddleContainer">
+            <form name="ToDo" action="" method="GET" autocomplete="off">
+                <input type="text" name="newTask" id="newTask" placeholder="my new task">
+                <input type="color" list="colorOptions" id="pickColor">
+                <datalist id="colorOptions">
+                    <option value="#000000">black</option>
+                    <option value="#808080">gray</option>
+                    <option value="#FFFFFF">white</option>
+                    <option value="#FF0000">red</option>
+                    <option value="#008000">green</option>
+                    <option value="#FFFF00">yellow</option>
+                    <option value="#00bfff">deepskyblue</option>
+                </datalist>
+                <input type="date" id="date">
+                <textarea name="taskDescription" id="description" cols="10" rows="1" placeholder="task description"></textarea>
+            </form>
+        </div>
+        <div class="sidesMenuBottomContainer">
+            <button type="button" class="addBtn" id="addBtn">add task</button>
+        </div>
+    </div>
+    <div class="addLabelModal hide" id="addLabelModal">
+        <h4>Add a new label</h4>
+        <input type="text" name="labelName" id="newLabel">
+        <button class="actionBtn" id="cancelBtn"></button>
+        <button class="actionBtn" id="confirmBtn"></button>
+    </div>
+</section>

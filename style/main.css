@@ -71,12 +71,13 @@ body{
 .homePage{
     height: auto;
     display: flex;
+<<<<<<< Updated upstream
     position: relative;
     top: 10vh;
+=======
+    top: 10.5vh;
+>>>>>>> Stashed changes
 }
-
-
-
 /* ####################################### */
 /* section addTask */
 .addTaskContainer{
@@ -354,17 +355,6 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-/* ####################################### */
-/*  contact page  */
-.contactContainer{ 
-    text-align: center;
-}
-.contactList{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 .hide{
     display: none;

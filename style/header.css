@@ -3,11 +3,17 @@ body{
     margin: auto;
     height: 100vh;
     overflow-x: hidden;
+    background-color: var(--main-color);
 }
-/* ####################################### */
+:root, :root.light{
+    --main-color:#E9E9EB;
+    --text-color:#3E619B;
+    --btn-color:#42506B;
+    --atention-color:#EF4B4C;
+}
 /* header */
 .header{
-    position:fixed;
+    position: relative;
     width: 100vw;
     height: 10vh;
     display: grid;
