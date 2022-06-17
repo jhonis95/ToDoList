@@ -71,12 +71,7 @@ body{
 .homePage{
     height: auto;
     display: flex;
-<<<<<<< Updated upstream
-    position: relative;
-    top: 10vh;
-=======
     top: 10.5vh;
->>>>>>> Stashed changes
 }
 /* ####################################### */
 /* section addTask */
