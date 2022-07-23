@@ -13,17 +13,16 @@ class card{
     currentPosition=1
     position=[1,2,3]
     aboutPj={
-        content:'Esse projeto é para testar minhas habilidades em manipulação do DOM, é um simples To Do List que permite o usuário separar suas tarefas em etiquetas para melhor organização dos seus afazeres. Essa aplicação web permite:',
+        content:'This project is to test my habilities in DOM manipunation. It is a simple to do list that allow the user divide your tasks in new list to a better organization of the daily chores. In this Web Application you can:',
     }
     funcEditDelete={
-        function:'Editar e deletar as etiquetas',
-        content:`User is allow to edit the labels and delete if is need` 
+        function:'Edit and create new to do',
+        content:`User is allow to edit the to do lists and delete if is need` 
     }
     funcCreateTask={
         function:'Creating Tasks',
         content:
-        `When you create a task you can add not just the task but a small
-         description, pick a color to your task and add a date to do the task`
+        `When you create a task you can add not just the task but a small description, pick a color to your task and add a date to do the task`
     }
     goToRigt=()=>{
         if(this.currentPosition===3){
@@ -52,7 +51,7 @@ class card{
                 projectImg.classList='funcEditDelete'
                 break;
             case this.currentPosition===3:
-                aboutProject.textContent=this.funcCreateTask.function+"\n"+this.funcCreateTask.content
+                aboutProject.textContent=this.funcCreateTask.function+"\r\n"+this.funcCreateTask.content
                 projectImg.className='funcCreateTask'
                 break;
             default:
