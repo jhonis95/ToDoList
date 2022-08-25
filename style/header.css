@@ -76,3 +76,23 @@ body{
     font-size:1.125rem;
     text-decoration:none;
 }
+@media screen and (min-width:800px){
+    .header{
+        width: 100vw;
+        height: 5vh;
+        display: flex;
+        justify-content: space-evenly;
+        box-shadow: 0 2px 10px 1px black;
+    }
+    .navegationBar{
+        background-color:var(--main-color);
+        grid-area: navBar;
+        height: 100%;
+    }
+    .navegationBar ul{
+        width: 120%;
+    }
+    .navegationBar a{
+        color:var(--text-color);
+    }
+}
