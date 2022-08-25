@@ -16,11 +16,12 @@ class card{
         content:'This project is to test my habilities in DOM manipunation. It is a simple to do list that allow the user divide your tasks in new list to a better organization of the daily chores. In this Web Application you can:',
     }
     funcEditDelete={
-        function:'Edit and create new to do',
+        function:'Edit and create new to do:',
+
         content:`User is allow to edit the to do lists and delete if is need` 
     }
     funcCreateTask={
-        function:'Creating Tasks',
+        function:'Creating Tasks:',
         content:
         `When you create a task you can add not just the task but a small description, pick a color to your task and add a date to do the task`
     }
