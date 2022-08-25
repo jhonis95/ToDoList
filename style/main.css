@@ -397,5 +397,45 @@ body{
 	}
 }
 @media screen and (min-width:800px){
-    
+    .addTaskContainer{
+        width: 473px;
+        height: 590px;
+        position: relative;
+        left: 0;
+        background-image: none;
+        border: 2px solid black;
+        border-radius: 10px;
+        z-index: 0;
+    }
+    .addTaskContainer form{
+        /* the height set the distance of the add task btn */
+        width: 225px;
+        max-height: none;
+        margin-top: 5%;
+    }
+    #rightSideMenuBtn{   
+        display: none;
+    }
+    #leftSideMenuBtn{   
+        display: none;
+    }
+    .addLabelContainer{
+        width: 473px;
+        height: 590px;
+        transform: translateX(0%);
+        background-image: none;
+        border: 2px solid black;
+        border-radius: 10px;
+        z-index: 0;
+        position: relative;
+    }
+    #addLabel{
+        width: 100%;
+    }
+    .addTaskContainer .sidesMenuBottomContainer{
+        margin: 0;
+    }
+    .sidesMenuBottomContainer{
+        width: 100%;
+    }
 }
