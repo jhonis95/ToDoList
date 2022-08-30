@@ -438,4 +438,18 @@ body{
     .sidesMenuBottomContainer{
         width: 100%;
     }
+    .homePage{
+        justify-content:space-evenly;
+    }
+    .taskContainer{
+        width:fit-content;
+    }
+    .taskListContainer{
+        background-image: none;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+    .sidesMenuMiddleContainer{
+        width: 100%;
+    }
 }
