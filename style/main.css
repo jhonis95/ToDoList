@@ -439,4 +439,35 @@ body{
     .sidesMenuBottomContainer{
         width: 100%;
     }
+    .homePage{
+        justify-content:space-evenly;
+    }
+    .taskContainer{
+        width:fit-content;
+    }
+    .taskListContainer{
+        background-image: none;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+    .sidesMenuMiddleContainer{
+        width: 100%;
+    }
+    .about-me{
+        width: 500px;
+    }
+    .about-page{
+        display: flex;
+        justify-content: space-around;
+    }
+    .projectCard{
+        width: 500px;
+    }
+    .about-img{
+        width: 180px;
+        height: 200px;
+    }
+    .about-page p{
+        font-size: 2rem;
+    }
 }
