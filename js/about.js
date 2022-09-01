@@ -17,6 +17,7 @@ class card{
     }
     funcEditDelete={
         function:'Edit and create new to do:',
+
         content:`User is allow to edit the to do lists and delete if is need` 
     }
     funcCreateTask={
