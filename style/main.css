@@ -1,7 +1,6 @@
 body{
     width: 100%;
     margin: auto;
-    height: 100vh;
     overflow-x: hidden;
     background-color: var(--main-color);
 }
@@ -453,7 +452,7 @@ body{
     .sidesMenuMiddleContainer{
         width: 100%;
     }
-    .about-me{
+    /* .about-me{
         width: 500px;
     }
     .about-page{
@@ -469,5 +468,5 @@ body{
     }
     .about-page p{
         font-size: 2rem;
-    }
+    } */
 }

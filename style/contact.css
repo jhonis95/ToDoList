@@ -4,6 +4,13 @@
     flex-direction: column;
     align-items: center;
 }
+.contact{
+    width: 75%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .contact h1{
     text-align: center;
 }
@@ -16,11 +23,10 @@
     grid-template-rows: repeat(2, 0.5fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-
+    width: 100%;
     border: 2px black solid;
     border-radius: 10px;
     margin: 5px;
-    width: 85vw;
     padding: 3px;
     text-align: center;
 
@@ -61,6 +67,7 @@
 #sendEmail{
     margin: 10px 10px;
     text-align: center;
+    width: 400px;
 }
 #sendEmail input{
     width: 150px;
@@ -72,4 +79,9 @@
     width: 315px;
     background-color: white;
     border-radius: 5px;
+}
+@media screen and (min-width:800px){
+    .contact-social-media{
+        width: 400px;
+    }
 }
