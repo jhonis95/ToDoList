@@ -94,13 +94,13 @@
 
     <section class="about-page" id="about">
         <div class="about-me">
-            <img src="https://avatars.githubusercontent.com/jhonis95" alt="developer" class="about-img">
             <h2 class="menuTitle">About Me</h2>
+            <img src="https://avatars.githubusercontent.com/jhonis95" alt="developer" class="about-img">
             <p id="devDescription"></p>
             <p id="devDescription2"></p>
-        </div>
-        <div class="btnContainer">
-            <button class="goToBtn">My Resume/CV</button>
+            <div class="btnContainer">
+                <button class="goToBtn">My Resume/CV</button>
+            </div>
         </div>
         <div class="projectCard">
             <h2 class="menuTitle">About The Project</h2>
@@ -121,20 +121,24 @@
     </section>
 
     <section class="contact" id="contact">
-        <h1>contact me:</h1>
-        <p>Let’s make great things together!!</p>
-        <div class="contact-social-media">
-            <ul class="social-media-list" id="social-media-list">
-
-            </ul>
+        <div class="social-media-container">
+            <h1>contact me:</h1>
+            <p>Let’s make great things together!!</p>
+            <div class="contact-social-media">
+                <ul class="social-media-list" id="social-media-list">
+    
+                </ul>
+            </div>
         </div>
-        <form id="sendEmail" action="https://formsubmit.co/7e675dbe3c4b8b26471d047d92a8969e" method="post" autocomplete="off">
-            <h2>Send a message</h2>
-            <input type="text" name="name" placeholder="full name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="" id="" cols="30" rows="10" placeholder="message" required></textarea>
-            <button class="goToBtn" type="submit">send message</button>
-        </form>
+        <div class="email-container">
+            <form id="sendEmail" action="https://formsubmit.co/7e675dbe3c4b8b26471d047d92a8969e" method="post" autocomplete="off">
+                <h2>Send me a message</h2>
+                <input type="text" name="name" placeholder="full name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="" id="" cols="30" rows="10" placeholder="message" required></textarea>
+                <button class="goToBtn" type="submit">send message</button>
+            </form>
+        </div>
     </section>
     
     <script type="text/javascript" src="./js/script.js"></script>

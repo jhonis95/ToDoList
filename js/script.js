@@ -231,8 +231,8 @@ function deleteTaskListBtn(){
 }
 // **********************************
 // Side menu Button
-const rightSideMenuBtn=document.getElementById('rightSideMenuBtn')
-rightSideMenuBtn.addEventListener('click',rightShowSideMenu)
+const RIGHT_SIDE_MENU_BTN=document.getElementById('rightSideMenuBtn')
+RIGHT_SIDE_MENU_BTN.addEventListener('click',rightShowSideMenu)
 
 function rightShowSideMenu(){
     //left : 24vw to show and to hide is 92
@@ -247,8 +247,8 @@ function rightShowSideMenu(){
 }
 
 // NEEED REVISION
-const leftSideMenuBtn=document.getElementById("leftSideMenuBtn")
-leftSideMenuBtn.addEventListener('click',leftShowSideMenu)
+const LEFT_SIDE_MENU_BTN=document.getElementById("leftSideMenuBtn")
+LEFT_SIDE_MENU_BTN.addEventListener('click',leftShowSideMenu)
 //left : 24vw to show and to hide is 92
 function leftShowSideMenu(){
     addMenu=document.getElementsByClassName("addLabelContainer")
