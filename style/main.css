@@ -2,7 +2,7 @@ body{
     width: 100%;
     margin: auto;
     overflow-x: hidden;
-    background-color: var(--main-color);
+    background-color: #F7F7F7;
 }
 :root, :root.light{
     --main-color:#E9E9EB;
@@ -18,6 +18,7 @@ body{
     padding: 5px;
     text-align: center;
     margin-bottom: 2vh;
+    margin-top: 1vh;
     background-color: var(--atention-color);
     color: var(--main-color);
     box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
@@ -96,7 +97,7 @@ body{
     width: 273px;
     height: 490px;
     position: absolute;
-    left: 93vw;
+    left: calc(100vw - 30px);
     transition: 0.5s;
     background-image: url(img/label_menu_right.svg);
     background-size: contain;
