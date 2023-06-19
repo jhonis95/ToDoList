@@ -12,7 +12,7 @@
 .about-page p{
     text-align: justify;
     margin:0px 10px;
-    font-size: 0.90rem;
+    font-size: 1.03rem;
     font-family: sans-serif;
     color:var(--text-color);
 }
