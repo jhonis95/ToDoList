@@ -4,7 +4,7 @@ html{
 body{
     width: 100%;
     margin: auto;
-    overflow-x: hidden;
+    overflow-x: hidden!important;
     background-color: #F7F7F7;
 }
 :root, :root.light{
@@ -258,7 +258,7 @@ body{
     align-self: center;
     justify-self: center;
     border: none;
-    background-color:none;
+    filter: invert(16%) sepia(90%) saturate(4849%) hue-rotate(356deg) brightness(97%) contrast(120%);
 }
 /* ####################################### */
 /* section addLabelContaine* background-size: contain; */
