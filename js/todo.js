@@ -38,7 +38,7 @@ export default class ToDo extends Task{
             description : this.description,
             color: this.color,
             date: this.date,
-            check: this.checkgit 
+            check: this.check
         })
     }
 }

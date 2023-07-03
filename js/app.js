@@ -17,24 +17,42 @@
 // }
 //******************** */
 import ToDo from "./todo.js"
-
-const addBtn=document.getElementById('addBtn');
-const addLabel=document.getElementById('addLabelBtn');
-const cancelAddLabelBtn=document.getElementById("cancelBtn")
+//app buttons
+const addTaskBtn=document.getElementById('addBtn');
+const addLabelBtn=document.getElementById('addLabelBtn');
 const confirmAddLabelBtn=document.getElementById("confirmBtn")
+const cancelAddLabelBtn=document.getElementById("cancelBtn")
+//task input
+const taskTitle=document.getElementById("newTask")//variable that have the value of the input
+const taskDescription=document.getElementById("description")
+const taskDate=document.getElementById("date")
+const taskColor=document.getElementById("pickColor")
 
+const taskInput={
+    taskTitle,
+    taskDescription,
+    taskDate,
+    taskColor
+}
 
-
-addBtn.addEventListener('click',addTask)
-addLabel.addEventListener('click',openAddLabelModal)
-cancelAddLabelBtn.addEventListener('click',cancelAddNewLabel)
-confirmAddLabelBtn.addEventListener('click',confirmAddNewLabel)
+const appButtons={
+    addTaskBtn,
+    addLabelBtn,
+    cancelAddLabelBtn,
+    confirmAddLabelBtn
+}
 
 class ToDoApp extends ToDo{
-    constructor(addTaskBtn,taskInput){
+    constructor(appButtons,taskInput){
         super();
         this.listOfToDo=[]
-        this.addTaskBtn=addTaskBtn;
+        if(appButtons){
+            this.addTaskBtn=appButtons.addTaskBtn,
+            this.addLabelBtn=appButtons.addLabelBtn,
+            this.confirmAddLabelBtn=appButtons.confirmAddLabelBtn,
+            this.cancelAddLabelBtn=appButtons.cancelAddLabelBtn
+        }
+        this.addTaskBtn=appButtons;
         if(taskInput){
             this.taskInputTitle=taskInput.taskNameInp
             this.taskInputDescription=taskInput.taskDescriptionInp
@@ -43,5 +61,5 @@ class ToDoApp extends ToDo{
         }
     }  
 }
-const App= new ToDoApp()
-window.onload(App())
+const App= new ToDoApp(appButtons,taskInput)
+console.log(App)
