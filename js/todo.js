@@ -40,6 +40,9 @@ export default class ToDo extends Task{
         super();
         this.toDoName=toDoName
         this.toDoTaskList=[]
+        
+        this.toDoListUI=document.getElementById("labelList")
+        this.toDoContainerUI
     }
     addTask=()=>{
         this.toDoTaskList.push(
@@ -47,6 +50,40 @@ export default class ToDo extends Task{
         )
         this.renderTaskList();
     }
+    set setToDoContainerUI(elementUI){
+        this.toDoListUI=elementUI
+    }
+    renderToDo=()=>{
+        let labelList=document.getElementById("labelList")
+        // let li=document.createElement("li")
+        this.setToDoContainerUI(document.createElement("li"))
+        let editBtn=document.createElement("button")
+        let labelName=document.createElement("input")
+        let deleteBtn=document.createElement("button")
+
+        labelName.type="button"
+
+        labelName.value=this.toDoName
+        labelList.appendChild(li)
+        li.appendChild(deleteBtn)
+        li.appendChild(labelName)
+        li.appendChild(editBtn)
+
+        editBtn.className="editLabelBtn"
+        labelName.className="labelName"
+        deleteBtn.className="deleteLabel"
+
+        editBtn.addEventListener('click',this.editLabel)
+        deleteBtn.addEventListener('click',deleteLabel)
+        labelName.addEventListener('click',setCurrentLabel)
+    }
+    editLabel=()=>{
+        let input=this.parentElement.children[1]
+        input.type="text"
+        input.className=`${input.className} inFocusToEdit`
+        let oldLabelName=input.value
+    }
+    ////////////////////
     renderTaskList=()=>{
         this.toDoTaskList.map((task)=>{
             let li=document.createElement("li")

@@ -70,27 +70,7 @@ class ToDoApp extends ToDo{
         ul.id="labelList"
 
         this.listOfToDo.map((todo)=>{
-            let labelList=document.getElementById("labelList")
-            let li=document.createElement("li")
-            let editBtn=document.createElement("button")
-            let labelName=document.createElement("input")
-            let deleteBtn=document.createElement("button")
-
-            labelName.type="button"
-
-            labelName.value=todo.toDoName
-            labelList.appendChild(li)
-            li.appendChild(deleteBtn)
-            li.appendChild(labelName)
-            li.appendChild(editBtn)
-
-            editBtn.className="editLabelBtn"
-            labelName.className="labelName"
-            deleteBtn.className="deleteLabel"
-            //now who controu de app buttons is the class App
-            // editBtn.addEventListener('click',editLabel)
-            // deleteBtn.addEventListener('click',deleteLabel)
-            // labelName.addEventListener('click',setCurrentLabel)
+            todo.renderToDo()
         })
     }
 }
