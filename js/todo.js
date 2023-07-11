@@ -40,8 +40,7 @@ export default class ToDo extends Task{
         super();
         this.toDoName=toDoName
         this.toDoTaskList=[]
-        
-        this.toDoListUI=document.getElementById("labelList")
+    
         this.toDoContainerUI
         this.toDoNameUI
         this.toDoDeleteBtnUI
@@ -69,6 +68,7 @@ export default class ToDo extends Task{
         this.toDoDeleteBtnUI=elementUI
     }
     renderToDo=()=>{
+        let listContainer=document.getElementById("labelList")
         this.setToDoContainerUI(document.createElement("li"))
         this.setToDoNameUI(document.createElement("input"))
         this.setToDoBtnEditUI(document.createElement("button"))
@@ -77,7 +77,7 @@ export default class ToDo extends Task{
         this.toDoNameUI.type="button"
 
         this.toDoNameUI.value=this.toDoName
-        this.toDoListUI.appendChild(this.toDoContainerUI)
+        listContainer.appendChild(this.toDoContainerUI)
         this.toDoContainerUI.appendChild(this.toDoDeleteBtnUI)
         this.toDoContainerUI.appendChild(this.toDoNameUI)
         this.toDoContainerUI.appendChild(this.toDoEditBtnUI)

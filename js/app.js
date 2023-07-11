@@ -50,8 +50,11 @@ class ToDoApp extends ToDo{
         })
         this.addLabelBtn.addEventListener('click',this.openModal)
         this.confirmAddLabelBtn.addEventListener('click',this.addToDo)
+        this.cancelAddLabelBtn.addEventListener('click',this.closeModal)
     }
-
+    closeModal=()=>{
+        document.getElementById("addLabelModal").className="addLabelModal hide"
+    }
     openModal=()=>{
         document.getElementById("addLabelModal").className="addLabelModal"
     }
