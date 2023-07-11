@@ -77,4 +77,4 @@ class ToDoApp extends ToDo{
 const App= new ToDoApp(appButtons,taskInput,inputToDoName)
 App.toDoName="For Today"
 App.addToDo()
-console.log(App)
+console.log(App.listOfToDo)

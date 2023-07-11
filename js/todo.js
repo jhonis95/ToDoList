@@ -43,6 +43,9 @@ export default class ToDo extends Task{
         
         this.toDoListUI=document.getElementById("labelList")
         this.toDoContainerUI
+        this.toDoNameUI
+        this.toDoDeleteBtnUI
+        this.toDoEditBtnUI
     }
     addTask=()=>{
         this.toDoTaskList.push(
@@ -50,38 +53,66 @@ export default class ToDo extends Task{
         )
         this.renderTaskList();
     }
-    set setToDoContainerUI(elementUI){
-        this.toDoListUI=elementUI
+    setToDoContainerUI(elementUI){ //setting the container of todo: <li> object
+        this.toDoContainerUI=elementUI
+    }
+    setToDoNameUI(elementUI){
+        this.toDoNameUI=elementUI
+    }
+    setToDoBtnEditUI(elementUI){
+        this.toDoNameUI=elementUI
+    }
+    setToDoBtnEditUI(elementUI){
+        this.toDoEditBtnUI=elementUI
+    }
+    setToDoBtnDeleteUI(elementUI){
+        this.toDoDeleteBtnUI=elementUI
     }
     renderToDo=()=>{
-        let labelList=document.getElementById("labelList")
-        // let li=document.createElement("li")
         this.setToDoContainerUI(document.createElement("li"))
-        let editBtn=document.createElement("button")
-        let labelName=document.createElement("input")
-        let deleteBtn=document.createElement("button")
+        this.setToDoNameUI(document.createElement("input"))
+        this.setToDoBtnEditUI(document.createElement("button"))
+        this.setToDoBtnDeleteUI(document.createElement("button"))
 
-        labelName.type="button"
+        this.toDoNameUI.type="button"
 
-        labelName.value=this.toDoName
-        labelList.appendChild(li)
-        li.appendChild(deleteBtn)
-        li.appendChild(labelName)
-        li.appendChild(editBtn)
+        this.toDoNameUI.value=this.toDoName
+        this.toDoListUI.appendChild(this.toDoContainerUI)
+        this.toDoContainerUI.appendChild(this.toDoDeleteBtnUI)
+        this.toDoContainerUI.appendChild(this.toDoNameUI)
+        this.toDoContainerUI.appendChild(this.toDoEditBtnUI)
 
-        editBtn.className="editLabelBtn"
-        labelName.className="labelName"
-        deleteBtn.className="deleteLabel"
+        this.toDoEditBtnUI.className="editLabelBtn"
+        this.toDoNameUI.className="labelName"
+        this.toDoDeleteBtnUI.className="deleteLabel"
 
-        editBtn.addEventListener('click',this.editLabel)
-        deleteBtn.addEventListener('click',deleteLabel)
-        labelName.addEventListener('click',setCurrentLabel)
+        // this.toDoEditBtn.addEventListener('click',this.editLabel)
+        // this.toDoDeleteBtn.addEventListener('click',deleteLabel)
+        // this.toDoNameUI.addEventListener('click',setCurrentLabel)
     }
     editLabel=()=>{
-        let input=this.parentElement.children[1]
-        input.type="text"
-        input.className=`${input.className} inFocusToEdit`
-        let oldLabelName=input.value
+        this.toDoNameUI.type="text"
+        this.toDoNameUI.className=`${this.toDoNameUI.className} inFocusToEdit`
+        let oldLabelName=this.toDoNameUI.value
+
+        this.toDoNameUI.addEventListener('keypress',(e)=>{
+            if(e.key==='Enter'){
+                if(input.value==oldLabelName){//making sure the user did change the number
+                    input.className=`labelName`
+                    input.type="button"
+                    return
+                }
+                Object.keys(myToDo).forEach((Label)=>{
+                    if(oldLabelName===Label){
+                        myToDo[Label].labelName=input.value
+                        delete Object.assign(myToDo, {[input.value]: myToDo[Label] })[Label];
+                    }
+                })
+                input.className=`labelName`
+                input.type="button"
+                renderLabelList()
+            }
+        })
     }
     ////////////////////
     renderTaskList=()=>{
