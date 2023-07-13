@@ -48,6 +48,8 @@ class ToDoApp extends ToDo{
         this.toDoInput.addEventListener('change',(event)=>{
             this.toDoName=event.target.value
         })
+
+        this.addTaskBtn.addEventListener('click',this.getCurrentToDo)
         this.addLabelBtn.addEventListener('click',this.openModal)
         this.confirmAddLabelBtn.addEventListener('click',this.addToDo)
         this.cancelAddLabelBtn.addEventListener('click',this.closeModal)
@@ -58,9 +60,17 @@ class ToDoApp extends ToDo{
     openModal=()=>{
         document.getElementById("addLabelModal").className="addLabelModal"
     }
+    resetCurrentToDo(){
+        return(
+            this.listOfToDo.map((todo)=>{
+                todo.setCurrentToDo(false)
+            })
+        )
+    }
     addToDo=()=>{
+        this.resetCurrentToDo()
         this.listOfToDo.push(
-            new ToDo(this.toDoName)
+            new ToDo(this.toDoName,true)
         )
         this.renderToDoList()
     }
@@ -74,10 +84,30 @@ class ToDoApp extends ToDo{
 
         this.listOfToDo.map((todo)=>{
             todo.renderToDo()
+            todo.toDoNameUI.addEventListener('click',()=>{
+                this.resetCurrentToDo()
+                todo.currentToDo=true;
+                // todo.renderTaskList() 
+            })
+            todo.toDoDeleteBtnUI.addEventListener('click',()=>{
+                
+                todo.renderToDo()
+            })
+        })
+    }
+    ///task
+    getCurrentToDo(){
+        this.listOfToDo.map((todo)=>{
+            if(todo.currentToDo==true){
+                this.addTask()
+                todo.renderTaskList()
+            }
         })
     }
 }
 const App= new ToDoApp(appButtons,taskInput,inputToDoName)
 App.toDoName="For Today"
 App.addToDo()
-console.log(App.listOfToDo)
+// setInterval(()=>{
+    console.log(App)
+// },10000)

@@ -35,11 +35,15 @@ class Task{
         this.taskDeleteBtn=button
     }
 }
+
+
 export default class ToDo extends Task{
-    constructor(toDoName){
+    constructor(toDoName,isCurrentToDo){
         super();
         this.toDoName=toDoName
         this.toDoTaskList=[]
+        this.currentToDo=isCurrentToDo
+
     
         this.toDoContainerUI
         this.toDoNameUI
@@ -51,6 +55,9 @@ export default class ToDo extends Task{
             new Task(this.title,this.description,this.color,this.date,this.check)
         )
         this.renderTaskList();
+    }
+    setCurrentToDo(value){
+        this.currentToDo=value
     }
     setToDoContainerUI(elementUI){ //setting the container of todo: <li> object
         this.toDoContainerUI=elementUI
@@ -86,9 +93,7 @@ export default class ToDo extends Task{
         this.toDoNameUI.className="labelName"
         this.toDoDeleteBtnUI.className="deleteLabel"
 
-        // this.toDoEditBtn.addEventListener('click',this.editLabel)
-        // this.toDoDeleteBtn.addEventListener('click',deleteLabel)
-        // this.toDoNameUI.addEventListener('click',setCurrentLabel)
+        this.toDoEditBtnUI.addEventListener('click',this.editLabel)
     }
     editLabel=()=>{
         this.toDoNameUI.type="text"
@@ -97,20 +102,10 @@ export default class ToDo extends Task{
 
         this.toDoNameUI.addEventListener('keypress',(e)=>{
             if(e.key==='Enter'){
-                if(input.value==oldLabelName){//making sure the user did change the number
-                    input.className=`labelName`
-                    input.type="button"
-                    return
-                }
-                Object.keys(myToDo).forEach((Label)=>{
-                    if(oldLabelName===Label){
-                        myToDo[Label].labelName=input.value
-                        delete Object.assign(myToDo, {[input.value]: myToDo[Label] })[Label];
-                    }
-                })
-                input.className=`labelName`
-                input.type="button"
-                renderLabelList()
+                !e.target.value==oldLabelName?this.toDoNameUI=e.target.value:''
+                this.toDoNameUI.className=`labelName`
+                this.toDoNameUI.type="button"
+                this.toDoName=this.toDoNameUI.value
             }
         })
     }
