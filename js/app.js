@@ -87,11 +87,13 @@ class ToDoApp extends ToDo{
             todo.toDoNameUI.addEventListener('click',()=>{
                 this.resetCurrentToDo()
                 todo.currentToDo=true;
-                // todo.renderTaskList() 
+                // todo.renderTaskList() // need to create the task
             })
             todo.toDoDeleteBtnUI.addEventListener('click',()=>{
-                
-                todo.renderToDo()
+                let toDelete =this.listOfToDo.indexOf(todo)
+                this.listOfToDo.splice(toDelete,1)
+                console.log(this.listOfToDo)
+                this.renderToDoList()
             })
         })
     }
