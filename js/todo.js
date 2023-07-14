@@ -14,15 +14,12 @@ class Task{
     }
     setTaskDescription=(taskInput)=>{
         this.description=taskInput
-        console.log(this.description)
     }
     setTaskColor=(taskInput)=>{
         this.color=taskInput
-        console.log(this.color)
     }
     setTaskDate=(taskInput)=>{
         this.date=taskInput
-        console.log(this.date)
     }
     setTaskCheck=(taskInput)=>{
         this.check=taskInput

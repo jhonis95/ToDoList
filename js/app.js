@@ -119,15 +119,20 @@ class ToDoApp extends ToDo{
         })
     }
     getCurrentToDo=()=>{
-        this.listOfToDo.map((todo)=>{
-            if(todo.currentToDo==true){
-                todo.addTask(this.title,this.description,this.color,this.date)
-                document.getElementById("labelName").textContent=todo.toDoName
-                todo.renderTaskList()
-                this.cleanInputs()
-                return
-            }
-        })
+        this.title==''||this.description==''||this.color==''||this.date==''?(
+            alert("sorry you must add all the task inputs")
+        ):
+        (
+            this.listOfToDo.map((todo)=>{
+                if(todo.currentToDo==true){
+                    todo.addTask(this.title,this.description,this.color,this.date)
+                    document.getElementById("labelName").textContent=todo.toDoName
+                    todo.renderTaskList()
+                    this.cleanInputs()
+                    return
+                }
+            })
+        );
     }
     cleanInputs=()=>{
         this.taskInputTitle.value=''
@@ -144,6 +149,7 @@ class ToDoApp extends ToDo{
 const App= new ToDoApp(appButtons,taskInput,inputToDoName)
 App.toDoName="For Today"
 App.addToDo()
+App.cleanInputs()
 // setInterval(()=>{
-    console.log(App)
+    // console.log(App)
 // },10000)
