@@ -6,7 +6,7 @@ class Task{
         this.date=date
         this.check=check
 
-        this.tasckCheckBtn
+        this.taskCheckBtn
         this.taskDeleteBtn
     }
     setTaskTitle=(taskInput)=>{
@@ -14,23 +14,20 @@ class Task{
     }
     setTaskDescription=(taskInput)=>{
         this.description=taskInput
-        console.log(this.description)
     }
     setTaskColor=(taskInput)=>{
         this.color=taskInput
-        console.log(this.color)
     }
     setTaskDate=(taskInput)=>{
         this.date=taskInput
-        console.log(this.date)
     }
     setTaskCheck=(taskInput)=>{
         this.check=taskInput
     }
-    set setTaskCheckBtn(button){
-        this.tasckCheckBtn=button
+    setTaskCheckBtn=(button)=>{
+        this.taskCheckBtn=button
     }
-    set setTaskDeleteBtn(button){
+    setTaskDeleteBtn=(button)=>{
         this.taskDeleteBtn=button
     }
 }
@@ -148,6 +145,18 @@ export default class ToDo extends Task{
             taskDate.value=task.date
             taskColor.style.backgroundColor=task.color;
             checkBtn.checked=task.check
+
+            task.setTaskCheckBtn(checkBtn)
+            task.setTaskDeleteBtn(deleteBtn)
+            
+            task.taskCheckBtn.addEventListener('click',()=>{
+                task.check==false?task.setTaskCheck(true):task.setTaskCheck(false)
+            })
+            task.taskDeleteBtn.addEventListener('click',()=>{
+                let toDelete= this.toDoTaskList.indexOf(task)
+                this.toDoTaskList.splice(toDelete,1)
+                this.renderTaskList()
+            })
         })
     }
 }
