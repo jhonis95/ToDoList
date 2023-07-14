@@ -3,6 +3,8 @@ const addLabel=document.getElementById('addLabelBtn');
 const cancelAddLabelBtn=document.getElementById("cancelBtn")
 const confirmAddLabelBtn=document.getElementById("confirmBtn")
 
+
+
 addBtn.addEventListener('click',addTask)
 addLabel.addEventListener('click',openAddLabelModal)
 cancelAddLabelBtn.addEventListener('click',cancelAddNewLabel)
@@ -14,8 +16,15 @@ class label {
     constructor(labelName) {
         {
             this.labelName = labelName;
+            // this.taskList=[];
         }
     }
+    // addTask(newTask){
+    //     this.taskList.push(newTask)
+    // }
+    // deleteTask(taskToDelete){
+
+    // }
 }
 class task {
     constructor(title, description, color, date, check) {
@@ -26,6 +35,7 @@ class task {
         this.date = date;
     }
 }
+
 //creacting the todo:
 let myToDo=[]//object that have all the labels
 myToDo["Today"]=new label("Today")
@@ -138,7 +148,7 @@ function addTask(){
         return
     }
     //creacting the task object
-    myToDo[currentLabel][taskTitle]=new task(taskTitle,taskDescription,taskColor,taskDate,false)//How to Set Dynamic Property Keys with ES6
+    myToDo[currentLabel][taskTitle]=new task(taskTitle,taskDescription,taskColor,taskDate,false); //How to Set Dynamic Property Keys with ES6
 
     //to clean input after submit
     document.getElementById("newTask").value = null
