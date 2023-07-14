@@ -170,6 +170,3 @@ const App= new ToDoApp(appButtons,taskInput,inputToDoName)
 App.toDoName="For Today"
 App.addToDo()
 App.cleanInputs()
-// setInterval(()=>{
-    // console.log(App)
-// },10000)
