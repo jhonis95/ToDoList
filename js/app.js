@@ -5,18 +5,18 @@ const addLabelBtn=document.getElementById('addLabelBtn');
 const confirmAddLabelBtn=document.getElementById("confirmBtn")
 const cancelAddLabelBtn=document.getElementById("cancelBtn")
 //task input
-const taskTitle=document.getElementById("newTask")//variable that have the value of the input
-const taskDescription=document.getElementById("description")
-const taskDate=document.getElementById("date")
-const taskColor=document.getElementById("pickColor")
+const taskNameInp=document.getElementById("newTask")//variable that have the value of the input
+const taskDescriptionInp=document.getElementById("description")
+const taskColorInp=document.getElementById("pickColor")
+const taskDateInp=document.getElementById("date")
 //todo input
 const inputToDoName=document.getElementById("newLabel")
 
 const taskInput={
-    taskTitle,
-    taskDescription,
-    taskDate,
-    taskColor
+    taskNameInp,
+    taskDescriptionInp,
+    taskColorInp,
+    taskDateInp
 }
 
 const appButtons={
@@ -48,11 +48,26 @@ class ToDoApp extends ToDo{
         this.toDoInput.addEventListener('change',(event)=>{
             this.toDoName=event.target.value
         })
+        
+        this.taskInputTitle.addEventListener('change',()=>{
+            this.setTaskTitle(this.taskInputTitle.value)
+        })
+        this.taskInputDescription.addEventListener('change',()=>{
+            this.setTaskDescription(this.taskInputDescription.value)
+        })
+        this.taskInputColor.addEventListener('change',()=>{
+            this.setTaskColor(this.taskInputColor.value)
+        })
+        this.taskInputDate.addEventListener('change',()=>{
+            this.setTaskDate(this.taskInputDate.value)
+        })
 
         this.addTaskBtn.addEventListener('click',this.getCurrentToDo)
         this.addLabelBtn.addEventListener('click',this.openModal)
         this.confirmAddLabelBtn.addEventListener('click',this.addToDo)
         this.cancelAddLabelBtn.addEventListener('click',this.closeModal)
+
+
     }
     closeModal=()=>{
         document.getElementById("addLabelModal").className="addLabelModal hide"
@@ -87,24 +102,43 @@ class ToDoApp extends ToDo{
             todo.toDoNameUI.addEventListener('click',()=>{
                 this.resetCurrentToDo()
                 todo.currentToDo=true;
-                // todo.renderTaskList() // need to create the task
+                //need revision try to DRY
+                document.getElementById("labelName").textContent=todo.toDoName
+                todo.renderTaskList()
             })
             todo.toDoDeleteBtnUI.addEventListener('click',()=>{
                 let toDelete =this.listOfToDo.indexOf(todo)
                 this.listOfToDo.splice(toDelete,1)
-                console.log(this.listOfToDo)
+                this.resetCurrentToDo()
+                //need revision try to DRY
+                this.listOfToDo[0].currentToDo=true;
+                document.getElementById("labelName").textContent=this.listOfToDo[0].toDoName
                 this.renderToDoList()
+                this.listOfToDo[0].renderTaskList()
             })
         })
     }
-    ///task
-    getCurrentToDo(){
+    getCurrentToDo=()=>{
         this.listOfToDo.map((todo)=>{
             if(todo.currentToDo==true){
-                this.addTask()
+                todo.addTask(this.title,this.description,this.color,this.date)
+                document.getElementById("labelName").textContent=todo.toDoName
                 todo.renderTaskList()
+                this.cleanInputs()
+                return
             }
         })
+    }
+    cleanInputs=()=>{
+        this.taskInputTitle.value=''
+        this.taskInputDescription.value=''
+        this.taskInputColor.value=''
+        this.taskInputDate.value=''
+
+        this.setTaskTitle(this.taskInputTitle.value)
+        this.setTaskDescription(this.taskInputDescription.value)
+        this.setTaskColor(this.taskInputColor.value)
+        this.setTaskDate(this.taskInputDate.value)
     }
 }
 const App= new ToDoApp(appButtons,taskInput,inputToDoName)

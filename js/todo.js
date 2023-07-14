@@ -11,7 +11,6 @@ class Task{
     }
     setTaskTitle=(taskInput)=>{
         this.title=taskInput
-        console.log(this.title)
     }
     setTaskDescription=(taskInput)=>{
         this.description=taskInput
@@ -50,9 +49,9 @@ export default class ToDo extends Task{
         this.toDoDeleteBtnUI
         this.toDoEditBtnUI
     }
-    addTask=()=>{
+    addTask=(title,description,color,date)=>{
         this.toDoTaskList.push(
-            new Task(this.title,this.description,this.color,this.date,this.check)
+            new Task(title,description,color,date,false)
         )
         this.renderTaskList();
     }
@@ -111,6 +110,13 @@ export default class ToDo extends Task{
     }
     ////////////////////
     renderTaskList=()=>{
+        let taskListContainer=document.getElementById("taskList")//div with the todo list
+        let oldUl=document.getElementById("list")//getting the old ul id 
+        let ul=document.createElement("ul")//creating new ul
+
+        taskListContainer.replaceChild(ul,oldUl)//replacing the old ul for a new one
+        ul.id="list"//setting new ul to oldUl id to list in that way we dont have problem to reuse the render function   
+
         this.toDoTaskList.map((task)=>{
             let li=document.createElement("li")
             let taskName=document.createElement("h4")
