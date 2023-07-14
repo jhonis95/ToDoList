@@ -67,7 +67,11 @@ class ToDoApp extends ToDo{
         this.confirmAddLabelBtn.addEventListener('click',this.addToDo)
         this.cancelAddLabelBtn.addEventListener('click',this.closeModal)
 
+        this.leftSideMenuBtn=document.getElementById("leftSideMenuBtn")
+        this.leftSideMenuBtn.addEventListener('click',this.toggleLeftSideMenu)
 
+        this.rightSideMenuBtn=document.getElementById('rightSideMenuBtn')
+        this.rightSideMenuBtn.addEventListener('click',this.toggleRightSideMenu)
     }
     closeModal=()=>{
         document.getElementById("addLabelModal").className="addLabelModal hide"
@@ -144,6 +148,22 @@ class ToDoApp extends ToDo{
         this.setTaskDescription(this.taskInputDescription.value)
         this.setTaskColor(this.taskInputColor.value)
         this.setTaskDate(this.taskInputDate.value)
+    }
+    toggleLeftSideMenu=()=>{
+        const addMenu=document.getElementsByClassName("addLabelContainer")
+        if(addMenu[0].style.transform!=`translateX(${0}%)`){
+            addMenu[0].style.transform=`translateX(${0}%)`
+        }else{
+            addMenu[0].style.transform=`translateX(${-90}%)`
+        }
+    }
+    toggleRightSideMenu=()=>{
+        let sideMenu=document.getElementById("rightSideMenu")
+        if(sideMenu.style.transform!=`translateX(${0}px)`){
+            sideMenu.style.transform=`translateX(${0}px)`
+        }else{
+            sideMenu.style.transform=`translateX(${-245}px)`
+        }
     }
 }
 const App= new ToDoApp(appButtons,taskInput,inputToDoName)
