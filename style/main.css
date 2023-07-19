@@ -93,6 +93,8 @@ body{
 /* section addTask */
 .addTaskContainer input,textarea{
     background-color: var(--main-color);
+    border-radius: 5px;
+    border: black solid 1px;;
 }
 .addTaskContainer{
     max-height: 640px;
@@ -114,7 +116,8 @@ body{
     margin-top: 5%;
     justify-content:end;
     display: grid;
-    row-gap: 2px;
+    row-gap: 4px;
+    column-gap: 4px;
     grid-template-rows: 0fr 0.1fr 0.075fr;
     grid-template-areas: "newTask pickColor" "description description" "date date";
 }
@@ -139,6 +142,8 @@ body{
 }
 #description{
     grid-area: description;
+    resize: none;
+    height: 50px;
 }
 #rightSideMenuBtn{   
     width: 1.5rem;
@@ -190,7 +195,6 @@ body{
     margin: 0;
     list-style-type: none;
     overflow:hidden;
-    overflow-y: scroll;
     height: 440px;
 }
 #taskList li{
@@ -201,8 +205,8 @@ body{
     border-radius: 5px;
     margin: 0.5rem auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr) repeat(4,1.8fr) repeat(2, 1fr);
-    grid-template-rows: repeat(2, 0.5fr);
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(2, 1fr); 
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     background-color: var(--text-color);
@@ -219,7 +223,8 @@ body{
 .taskNameOutput{
     margin: 0;
     font-weight: lighter;
-    grid-area: 1 / 3 / 2 / 7;
+    grid-area: 1 / 3 / 2 / 9;
+    align-self: center;
 }
 .taskCheckBox{
     font: inherit; 
@@ -233,13 +238,14 @@ body{
 }
 .taskDescriptionOutput{
     font-size: medium;
-    grid-area: 2 / 3 / 3 / 7; 
+    grid-area: 2 / 3 / 3 / 9;
     text-align: center;
 }
 .taskDateOutput{
     font-size: small;
-    grid-area: 1 / 7 / 3 / 8;
+    grid-area: 1 / 9 / 1 / 10;
     align-self: center;
+    justify-self: last baseline;
 }
 .taskColorOutput{
     padding: 0%;
@@ -254,11 +260,12 @@ body{
     background-position: center; 
     width: 2.25em;
     height: 2.25em;
-    grid-area: 1 / 8 / 3 / 9;
+    grid-area: 1 / 9 / 4 / 10;
     align-self: center;
     justify-self: center;
     border: none;
     filter: invert(16%) sepia(90%) saturate(4849%) hue-rotate(356deg) brightness(97%) contrast(120%);
+    margin-top: 30px;
 }
 /* ####################################### */
 /* section addLabelContaine* background-size: contain; */
@@ -289,7 +296,6 @@ body{
     list-style-type:none;
     width: 90%;
     overflow:hidden;
-    overflow-y: scroll; 
 }
 #labelList li{
     text-align: center;

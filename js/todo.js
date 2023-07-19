@@ -105,15 +105,15 @@ export default class ToDo extends Task{
             }
         })
     }
-    ////////////////////
     renderTaskList=()=>{
-        let taskListContainer=document.getElementById("taskList")//div with the todo list
-        let oldUl=document.getElementById("list")//getting the old ul id 
-        let ul=document.createElement("ul")//creating new ul
+        let taskListContainer=document.getElementById("taskList")
+        let oldUl=document.getElementById("list") 
+        let ul=document.createElement("ul")
 
-        taskListContainer.replaceChild(ul,oldUl)//replacing the old ul for a new one
-        ul.id="list"//setting new ul to oldUl id to list in that way we dont have problem to reuse the render function   
+        taskListContainer.replaceChild(ul,oldUl)
+        ul.id="list"   
 
+        document.getElementById("labelName").textContent=this.toDoName;
         this.toDoTaskList.map((task)=>{
             let li=document.createElement("li")
             let taskName=document.createElement("h4")
@@ -123,7 +123,6 @@ export default class ToDo extends Task{
             let taskDate=document.createElement("output")
             let taskColor=document.createElement("button")
 
-            //setting the inputs type and class
             taskName.className="taskNameOutput"
             checkBtn.type="checkbox"
             checkBtn.className="taskCheckBox"
@@ -142,7 +141,7 @@ export default class ToDo extends Task{
 
             taskName.innerText=task.title;
             taskDescription.value=task.description;
-            taskDate.value=task.date
+            taskDate.value=task.date;
             taskColor.style.backgroundColor=task.color;
             checkBtn.checked=task.check
 

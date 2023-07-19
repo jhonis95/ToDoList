@@ -92,6 +92,7 @@ class ToDoApp extends ToDo{
             new ToDo(this.toDoName,true)
         )
         this.renderToDoList()
+        this.closeModal()
     }
     renderToDoList(){
         let labelListContainer= document.getElementById("labelListContainer")//Div container that have the label list
@@ -106,17 +107,13 @@ class ToDoApp extends ToDo{
             todo.toDoNameUI.addEventListener('click',()=>{
                 this.resetCurrentToDo()
                 todo.currentToDo=true;
-                //need revision try to DRY
-                document.getElementById("labelName").textContent=todo.toDoName
                 todo.renderTaskList()
             })
             todo.toDoDeleteBtnUI.addEventListener('click',()=>{
                 let toDelete =this.listOfToDo.indexOf(todo)
                 this.listOfToDo.splice(toDelete,1)
                 this.resetCurrentToDo()
-                //need revision try to DRY
                 this.listOfToDo[0].currentToDo=true;
-                document.getElementById("labelName").textContent=this.listOfToDo[0].toDoName
                 this.renderToDoList()
                 this.listOfToDo[0].renderTaskList()
             })
@@ -169,4 +166,6 @@ class ToDoApp extends ToDo{
 const App= new ToDoApp(appButtons,taskInput,inputToDoName)
 App.toDoName="For Today"
 App.addToDo()
+App.listOfToDo.map(todo=>todo.addTask("task exemple","it's at description of the task","blue","2023-07-19"))
+App.renderToDoList()
 App.cleanInputs()
